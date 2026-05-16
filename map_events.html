@@ -1,0 +1,4110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_4f29dd603406981a7cca44e32b63f586 {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+
+            <style>html, body {
+                width: 100%;
+                height: 100%;
+                margin: 0;
+                padding: 0;
+            }
+            </style>
+
+            <style>#map {
+                position:absolute;
+                top:0;
+                bottom:0;
+                right:0;
+                left:0;
+                }
+            </style>
+
+            <script>
+                L_NO_TOUCH = false;
+                L_DISABLE_3D = false;
+            </script>
+
+        
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/leaflet.markercluster.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet.markercluster/1.1.0/MarkerCluster.Default.css"/>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/leaflet-minimap/3.6.1/Control.MiniMap.css"/>
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_4f29dd603406981a7cca44e32b63f586" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_4f29dd603406981a7cca44e32b63f586 = L.map(
+                "map_4f29dd603406981a7cca44e32b63f586",
+                {
+                    center: [-17.82036094, 31.04693982888889],
+                    crs: L.CRS.EPSG3857,
+                    ...{
+  "zoom": 13,
+  "zoomControl": true,
+  "preferCanvas": false,
+}
+
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_e379e9d87a3de9c73131d2de8ed2f3d7 = L.tileLayer(
+                "https://{s}.basemaps.cartocdn.com/light_all/{z}/{x}/{y}{r}.png",
+                {
+  "minZoom": 0,
+  "maxZoom": 20,
+  "maxNativeZoom": 20,
+  "noWrap": false,
+  "attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors \u0026copy; \u003ca href=\"https://carto.com/attributions\"\u003eCARTO\u003c/a\u003e",
+  "subdomains": "abcd",
+  "detectRetina": false,
+  "tms": false,
+  "opacity": 1,
+}
+
+            );
+        
+    
+            tile_layer_e379e9d87a3de9c73131d2de8ed2f3d7.addTo(map_4f29dd603406981a7cca44e32b63f586);
+        
+    
+            var poly_line_35c5ce7d8e957dac3f743e2db507f7de = L.polyline(
+                [[-17.82495, 31.03362], [-17.82482, 31.033823], [-17.825094, 31.034226], [-17.82465, 31.03407], [-17.824905, 31.034432], [-17.82479, 31.034823], [-17.824255, 31.034721], [-17.824441, 31.035237], [-17.824566, 31.035572], [-17.824259, 31.035699], [-17.824083, 31.035964], [-17.824099, 31.035853], [-17.824111, 31.036253], [-17.823703, 31.03627], [-17.82397, 31.036621], [-17.823892, 31.036752], [-17.823282, 31.037154], [-17.823595, 31.037457], [-17.823306, 31.037607], [-17.823279, 31.038043], [-17.822962, 31.038228], [-17.822916, 31.038297], [-17.82288, 31.038475], [-17.82279, 31.038916], [-17.823116, 31.038987], [-17.822563, 31.039253], [-17.822611, 31.039908], [-17.822412, 31.040108], [-17.822577, 31.040139], [-17.821884, 31.040003], [-17.822142, 31.040429], [-17.821875, 31.040573], [-17.821931, 31.041005], [-17.821569, 31.041122], [-17.82135, 31.041475], [-17.821659, 31.04137], [-17.82118, 31.041935], [-17.821538, 31.041995], [-17.821476, 31.042558], [-17.821242, 31.04256], [-17.820601, 31.042649], [-17.821168, 31.042741], [-17.820706, 31.043353], [-17.820556, 31.043401], [-17.820413, 31.043386], [-17.820268, 31.043678], [-17.820725, 31.044378], [-17.820142, 31.044212], [-17.820319, 31.044256], [-17.82019, 31.044745], [-17.819821, 31.045103], [-17.820163, 31.045065], [-17.820057, 31.045214], [-17.819776, 31.045311], [-17.819471, 31.045479], [-17.819593, 31.04577], [-17.81971, 31.045854], [-17.819287, 31.045972], [-17.819302, 31.046261], [-17.819451, 31.045933], [-17.819188, 31.046547], [-17.819007, 31.046743], [-17.819021, 31.046735], [-17.818754, 31.046675], [-17.818786, 31.047043], [-17.818901, 31.047107], [-17.818587, 31.047366], [-17.818412, 31.04711], [-17.817958, 31.047502], [-17.818148, 31.047646], [-17.818134, 31.047771], [-17.817843, 31.048646], [-17.817772, 31.048099], [-17.817502, 31.048311], [-17.817413, 31.048352], [-17.817471, 31.048763], [-17.817675, 31.048887], [-17.817314, 31.048651], [-17.816744, 31.049114], [-17.817266, 31.049204], [-17.816948, 31.048851], [-17.816883, 31.048915], [-17.81656, 31.049586], [-17.817006, 31.049877], [-17.817011, 31.049729], [-17.816265, 31.049974], [-17.816451, 31.05007], [-17.816413, 31.050328], [-17.816322, 31.050374], [-17.816164, 31.050149], [-17.81587, 31.050903], [-17.81587, 31.050707], [-17.815463, 31.051056], [-17.815859, 31.051149], [-17.815564, 31.051167], [-17.815651, 31.051631], [-17.815295, 31.051597], [-17.815363, 31.051497], [-17.815203, 31.051798], [-17.815527, 31.052072], [-17.815602, 31.051949], [-17.814985, 31.051925], [-17.814591, 31.052413], [-17.814551, 31.052186], [-17.814214, 31.052686], [-17.814415, 31.052762], [-17.814258, 31.053248], [-17.813937, 31.053189], [-17.813843, 31.05322], [-17.81396, 31.053922], [-17.813278, 31.05358], [-17.813423, 31.054136], [-17.813295, 31.054207], [-17.813114, 31.054226], [-17.812951, 31.054578], [-17.812872, 31.054479], [-17.812966, 31.054953], [-17.812754, 31.054825], [-17.812283, 31.055215], [-17.812196, 31.05536], [-17.81227, 31.055416], [-17.812021, 31.05589], [-17.811676, 31.056041], [-17.811902, 31.056568], [-17.811744, 31.056009], [-17.811504, 31.056353], [-17.811466, 31.056761], [-17.811065, 31.056906], [-17.811209, 31.05681], [-17.810875, 31.057272], [-17.810947, 31.057397], [-17.810654, 31.057515], [-17.810527, 31.057916], [-17.810586, 31.057729], [-17.810398, 31.057767], [-17.810289, 31.058247], [-17.809994, 31.058565], [-17.809652, 31.058613], [-17.80982, 31.059179], [-17.80917, 31.059209], [-17.809787, 31.058893], [-17.809289, 31.059525], [-17.80906, 31.059523], [-17.808829, 31.059905], [-17.808971, 31.060034], [-17.808913, 31.060247], [-17.808475, 31.060275], [-17.808805, 31.059839], [-17.808169, 31.060612], [-17.808108, 31.060719], [-17.808284, 31.060597], [-17.807694, 31.061489], [-17.807621, 31.061399], [-17.807538, 31.061603], [-17.806904, 31.061773], [-17.807309, 31.062198], [-17.807002, 31.062119], [-17.806952, 31.062066], [-17.806887, 31.062328], [-17.806517, 31.062691], [-17.806327, 31.062864], [-17.806372, 31.062833], [-17.806297, 31.063207], [-17.806046, 31.063325], [-17.805758, 31.062989], [-17.805737, 31.063691], [-17.8055, 31.064102], [-17.805286, 31.063979], [-17.804927, 31.063968], [-17.805193, 31.064158], [-17.804733, 31.064568], [-17.804276, 31.064791], [-17.804658, 31.064891], [-17.80426, 31.064833], [-17.804578, 31.065326], [-17.803845, 31.06526], [-17.803891, 31.06571], [-17.804056, 31.06589], [-17.803556, 31.06579], [-17.803162, 31.066258], [-17.803155, 31.066394], [-17.802906, 31.066748], [-17.802956, 31.066646], [-17.802742, 31.06698], [-17.802544, 31.0671], [-17.802585, 31.06766], [-17.802455, 31.067351], [-17.801948, 31.067639], [-17.801878, 31.067539], [-17.801682, 31.068186], [-17.801748, 31.06827], [-17.801594, 31.068537], [-17.801313, 31.068298], [-17.801028, 31.068618], [-17.80083, 31.068632], [-17.800918, 31.068787], [-17.800864, 31.06884], [-17.800497, 31.069141], [-17.800021, 31.069437], [-17.80012, 31.069838], [-17.799935, 31.070213], [-17.799812, 31.069663], [-17.800435, 31.069751], [-17.800792, 31.069072], [-17.801134, 31.069243], [-17.800892, 31.069037], [-17.80092, 31.068857], [-17.801252, 31.068409], [-17.801285, 31.067599], [-17.801718, 31.067521], [-17.802163, 31.067592], [-17.802136, 31.067163], [-17.802442, 31.067372], [-17.802568, 31.066913], [-17.802759, 31.066412], [-17.803089, 31.066276], [-17.803091, 31.065938], [-17.803408, 31.065868], [-17.803437, 31.065617], [-17.803616, 31.065599], [-17.803915, 31.065377], [-17.804386, 31.064954], [-17.804392, 31.06475], [-17.804121, 31.064835], [-17.804784, 31.064447], [-17.805284, 31.064136], [-17.804913, 31.063695], [-17.805548, 31.063575], [-17.805447, 31.063247], [-17.805665, 31.062853], [-17.805966, 31.062592], [-17.805866, 31.062693], [-17.806301, 31.061981], [-17.806559, 31.061972], [-17.80683, 31.062187], [-17.807161, 31.061376], [-17.807315, 31.06105], [-17.807488, 31.06083], [-17.807467, 31.060556], [-17.807815, 31.060383], [-17.8082, 31.060681], [-17.807901, 31.060316], [-17.808325, 31.060021], [-17.808374, 31.059759], [-17.808725, 31.059812], [-17.808781, 31.059474], [-17.80932, 31.059083], [-17.809635, 31.059133], [-17.809411, 31.05869], [-17.809738, 31.058048], [-17.810133, 31.058272], [-17.81047, 31.058055], [-17.810377, 31.057828], [-17.811285, 31.057594], [-17.811628, 31.057168], [-17.812288, 31.056901], [-17.812357, 31.056699], [-17.812968, 31.056383], [-17.813056, 31.056679], [-17.813805, 31.056458], [-17.813943, 31.056464], [-17.814477, 31.055659], [-17.81475, 31.055782], [-17.815258, 31.05512], [-17.815489, 31.055031], [-17.815836, 31.054969], [-17.816341, 31.054801], [-17.816771, 31.054911], [-17.817531, 31.054441], [-17.817284, 31.054239], [-17.817794, 31.05388], [-17.818101, 31.053804], [-17.818692, 31.053531], [-17.818866, 31.053584], [-17.819415, 31.053107], [-17.820517, 31.052856], [-17.820529, 31.052783], [-17.820892, 31.052145], [-17.821337, 31.052287], [-17.821614, 31.052257], [-17.822182, 31.052059], [-17.822292, 31.05138], [-17.822668, 31.051526], [-17.823621, 31.051705], [-17.823424, 31.051272], [-17.824138, 31.051466], [-17.824545, 31.0508], [-17.824696, 31.05067], [-17.82513, 31.05053], [-17.825538, 31.050526], [-17.825794, 31.049625], [-17.826501, 31.049388], [-17.82682, 31.049533], [-17.827372, 31.049764], [-17.827556, 31.048971], [-17.828048, 31.048656], [-17.828108, 31.048875], [-17.828498, 31.048853], [-17.829675, 31.048271], [-17.829353, 31.048043], [-17.829891, 31.047636], [-17.829802, 31.047824], [-17.830267, 31.047461], [-17.830408, 31.047217], [-17.830969, 31.047149], [-17.831043, 31.04676], [-17.831305, 31.046369], [-17.831313, 31.046304], [-17.831835, 31.045863], [-17.831598, 31.045752], [-17.831819, 31.045361], [-17.832198, 31.045473], [-17.832219, 31.044755], [-17.832447, 31.04457], [-17.833055, 31.044415], [-17.832931, 31.043817], [-17.833276, 31.043839], [-17.834038, 31.0437], [-17.833567, 31.043225], [-17.833921, 31.04334], [-17.833928, 31.04282], [-17.834455, 31.042424], [-17.833992, 31.042334], [-17.834852, 31.041373], [-17.835072, 31.041499], [-17.834639, 31.041594], [-17.835149, 31.041031], [-17.835123, 31.041052], [-17.835498, 31.040698], [-17.835612, 31.04059], [-17.836206, 31.040327], [-17.836214, 31.040089], [-17.836328, 31.039791], [-17.836346, 31.039603], [-17.836932, 31.039325], [-17.837028, 31.038504], [-17.836823, 31.038702], [-17.837437, 31.038396], [-17.837534, 31.038202], [-17.838144, 31.037653], [-17.837923, 31.037602], [-17.837928, 31.037126], [-17.838274, 31.037359], [-17.838293, 31.036933], [-17.838813, 31.036197], [-17.838973, 31.036458], [-17.839187, 31.036011], [-17.839472, 31.035682], [-17.839717, 31.035314], [-17.839583, 31.03522], [-17.839994, 31.03499], [-17.840019, 31.034865], [-17.839936, 31.034479], [-17.839467, 31.03412], [-17.839811, 31.033504], [-17.839849, 31.033465], [-17.839432, 31.033716], [-17.839471, 31.032694], [-17.839074, 31.032566], [-17.839229, 31.032235], [-17.839036, 31.031724], [-17.838737, 31.031813], [-17.839004, 31.031444], [-17.838562, 31.031299], [-17.838582, 31.030863], [-17.838659, 31.030486], [-17.838253, 31.030029], [-17.838374, 31.029741], [-17.83787, 31.029294], [-17.8382, 31.029392], [-17.837938, 31.028918], [-17.837847, 31.028723], [-17.837722, 31.028497], [-17.837782, 31.027875], [-17.837788, 31.02787], [-17.837491, 31.027551], [-17.83731, 31.027174], [-17.837198, 31.026712], [-17.836988, 31.026531], [-17.837231, 31.026156], [-17.836722, 31.026154], [-17.836879, 31.025907], [-17.836521, 31.025241], [-17.836531, 31.025114], [-17.836885, 31.02507], [-17.836652, 31.024646], [-17.836224, 31.024199], [-17.836213, 31.023723], [-17.836367, 31.023845], [-17.836168, 31.023342], [-17.835737, 31.022853], [-17.835783, 31.022783], [-17.835982, 31.021969], [-17.835954, 31.022202], [-17.835707, 31.021832], [-17.835379, 31.021587], [-17.835903, 31.02102], [-17.835224, 31.020983], [-17.835157, 31.020508], [-17.835166, 31.020099], [-17.835022, 31.019895], [-17.835261, 31.02045], [-17.834796, 31.020571], [-17.834771, 31.020793], [-17.834078, 31.021026], [-17.833977, 31.02109], [-17.834226, 31.021052], [-17.833819, 31.021922], [-17.833753, 31.022525], [-17.833476, 31.022418], [-17.832771, 31.022874], [-17.833103, 31.02289], [-17.833016, 31.023579], [-17.832846, 31.02345], [-17.832284, 31.023311], [-17.831919, 31.024299], [-17.831655, 31.024257], [-17.831682, 31.024645], [-17.831453, 31.024654], [-17.831402, 31.024796], [-17.830873, 31.025303], [-17.831045, 31.02562], [-17.830864, 31.025767], [-17.830708, 31.026462], [-17.83046, 31.026755], [-17.83006, 31.026577], [-17.829854, 31.026891], [-17.829679, 31.027144], [-17.82928, 31.027342], [-17.829541, 31.028082], [-17.829089, 31.028186], [-17.828987, 31.028169], [-17.828758, 31.028546], [-17.828877, 31.028663], [-17.828446, 31.028894], [-17.828219, 31.029293], [-17.827604, 31.029773], [-17.827524, 31.03026], [-17.827503, 31.030544], [-17.827539, 31.030719], [-17.827421, 31.030525], [-17.826704, 31.031135], [-17.826836, 31.031449], [-17.826386, 31.031647], [-17.826305, 31.031854], [-17.826206, 31.032241], [-17.825799, 31.032416], [-17.825694, 31.032959], [-17.825403, 31.032968], [-17.825145, 31.033351]],
+                {"bubblingMouseEvents": true, "color": "#2196F3", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "#2196F3", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.5, "smoothFactor": 1.0, "stroke": true, "weight": 2}
+            ).addTo(map_4f29dd603406981a7cca44e32b63f586);
+        
+    
+            poly_line_35c5ce7d8e957dac3f743e2db507f7de.bindTooltip(
+                `<div>
+                     Drive Route
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+            var marker_cluster_2639f6b6415512f4dad8e8d14e07d38c = L.markerClusterGroup(
+                {
+}
+            );
+        
+    
+            var marker_97021a2e94e201d651dddf604eef8b40 = L.marker(
+                [-17.823595, 31.037457],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_221ff42266a574bcd4cb18c93ee86338 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_90edea42cd1eda45ad3a94e9046e51d3 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d1f58e7d05cdb38e649c33f6323bcfec = $(`<div id="html_d1f58e7d05cdb38e649c33f6323bcfec" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -96.17 dBm<br>SINR: 8.31 dB<br>Tput: 34.1 Mbps<br>Cell: HRE_CBD_1<br>Time: 2024-06-15 08:02:16</div>`)[0];
+                popup_90edea42cd1eda45ad3a94e9046e51d3.setContent(html_d1f58e7d05cdb38e649c33f6323bcfec);
+            
+        
+
+        marker_97021a2e94e201d651dddf604eef8b40.bindPopup(popup_90edea42cd1eda45ad3a94e9046e51d3)
+        ;
+
+        
+    
+    
+            marker_97021a2e94e201d651dddf604eef8b40.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_97021a2e94e201d651dddf604eef8b40.setIcon(icon_221ff42266a574bcd4cb18c93ee86338);
+            
+    
+            var marker_cdc1b1741ac530d39df5c92440939c80 = L.marker(
+                [-17.819471, 31.045479],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_84bad6c177fe6192878d1cef63dfb0f3 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b765471bc1e27ff9edd4fc6c673a69ba = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1686af3d1e5f7d4949aa0e2b4f3b2a6e = $(`<div id="html_1686af3d1e5f7d4949aa0e2b4f3b2a6e" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -88.95 dBm<br>SINR: 10.44 dB<br>Tput: 45.1 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:07:12</div>`)[0];
+                popup_b765471bc1e27ff9edd4fc6c673a69ba.setContent(html_1686af3d1e5f7d4949aa0e2b4f3b2a6e);
+            
+        
+
+        marker_cdc1b1741ac530d39df5c92440939c80.bindPopup(popup_b765471bc1e27ff9edd4fc6c673a69ba)
+        ;
+
+        
+    
+    
+            marker_cdc1b1741ac530d39df5c92440939c80.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cdc1b1741ac530d39df5c92440939c80.setIcon(icon_84bad6c177fe6192878d1cef63dfb0f3);
+            
+    
+            var marker_684e823e8e8f78b4f185d66999446c5b = L.marker(
+                [-17.819593, 31.04577],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_7fba8e19b0558541128ab0ffc71f4c80 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_34d39372585e3a35d7cc390d1748d806 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_bc4b39807f62da9fd934898a988c40ee = $(`<div id="html_bc4b39807f62da9fd934898a988c40ee" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -103.82 dBm<br>SINR: 5.72 dB<br>Tput: 27.2 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:07:20</div>`)[0];
+                popup_34d39372585e3a35d7cc390d1748d806.setContent(html_bc4b39807f62da9fd934898a988c40ee);
+            
+        
+
+        marker_684e823e8e8f78b4f185d66999446c5b.bindPopup(popup_34d39372585e3a35d7cc390d1748d806)
+        ;
+
+        
+    
+    
+            marker_684e823e8e8f78b4f185d66999446c5b.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_684e823e8e8f78b4f185d66999446c5b.setIcon(icon_7fba8e19b0558541128ab0ffc71f4c80);
+            
+    
+            var marker_0f2e857b626f2c336542bd5c08362c1d = L.marker(
+                [-17.816164, 31.050149],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_ec0ea8ec1e829ab92fd35803e2324c5c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b1c785f4bb645c50350e84737f3db81e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e66597ee5771ba888bf92f9dd7799b59 = $(`<div id="html_e66597ee5771ba888bf92f9dd7799b59" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -129.50393516257006 dBm<br>SINR: 7.2 dB<br>Tput: 32.8 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:11:52</div>`)[0];
+                popup_b1c785f4bb645c50350e84737f3db81e.setContent(html_e66597ee5771ba888bf92f9dd7799b59);
+            
+        
+
+        marker_0f2e857b626f2c336542bd5c08362c1d.bindPopup(popup_b1c785f4bb645c50350e84737f3db81e)
+        ;
+
+        
+    
+    
+            marker_0f2e857b626f2c336542bd5c08362c1d.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0f2e857b626f2c336542bd5c08362c1d.setIcon(icon_ec0ea8ec1e829ab92fd35803e2324c5c);
+            
+    
+            var marker_94b1f8b62e036bd49efa0d8cb0de206e = L.marker(
+                [-17.813295, 31.054207],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_9d11e1d750b1945f45c1acee2164784e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_2927e396db3dc9cb068198701a1fe40e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_92da59dbf26fbd1006c81bf08999c950 = $(`<div id="html_92da59dbf26fbd1006c81bf08999c950" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -129.53 dBm<br>SINR: -6.279999999999999 dB<br>Tput: 1.9 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:14:56</div>`)[0];
+                popup_2927e396db3dc9cb068198701a1fe40e.setContent(html_92da59dbf26fbd1006c81bf08999c950);
+            
+        
+
+        marker_94b1f8b62e036bd49efa0d8cb0de206e.bindPopup(popup_2927e396db3dc9cb068198701a1fe40e)
+        ;
+
+        
+    
+    
+            marker_94b1f8b62e036bd49efa0d8cb0de206e.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_94b1f8b62e036bd49efa0d8cb0de206e.setIcon(icon_9d11e1d750b1945f45c1acee2164784e);
+            
+    
+            var marker_54a711a7d7ed61a59ad35be2f51a3c1e = L.marker(
+                [-17.813114, 31.054226],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_3f44ec87d03564d66ab0b82a9c7a1099 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4b6616bd7ffbd3baf810495f3a773301 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d8ad1798335468da4bf632a51364548e = $(`<div id="html_d8ad1798335468da4bf632a51364548e" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -118.68 dBm<br>SINR: -6.21 dB<br>Tput: 2.5 Mbps<br>Cell: HRE_CBD_1<br>Time: 2024-06-15 08:15:04</div>`)[0];
+                popup_4b6616bd7ffbd3baf810495f3a773301.setContent(html_d8ad1798335468da4bf632a51364548e);
+            
+        
+
+        marker_54a711a7d7ed61a59ad35be2f51a3c1e.bindPopup(popup_4b6616bd7ffbd3baf810495f3a773301)
+        ;
+
+        
+    
+    
+            marker_54a711a7d7ed61a59ad35be2f51a3c1e.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_54a711a7d7ed61a59ad35be2f51a3c1e.setIcon(icon_3f44ec87d03564d66ab0b82a9c7a1099);
+            
+    
+            var marker_c8387fbb0c937feac1103e4ee1c5a6e3 = L.marker(
+                [-17.812951, 31.054578],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_20bcd703a1d71c2186a6533494ae0105 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f37b4a241b8d299cd5073257a73aff45 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_259cebf6c01304e81b09589b1e3a06eb = $(`<div id="html_259cebf6c01304e81b09589b1e3a06eb" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -120.66 dBm<br>SINR: -3.39 dB<br>Tput: 2.8 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:15:12</div>`)[0];
+                popup_f37b4a241b8d299cd5073257a73aff45.setContent(html_259cebf6c01304e81b09589b1e3a06eb);
+            
+        
+
+        marker_c8387fbb0c937feac1103e4ee1c5a6e3.bindPopup(popup_f37b4a241b8d299cd5073257a73aff45)
+        ;
+
+        
+    
+    
+            marker_c8387fbb0c937feac1103e4ee1c5a6e3.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c8387fbb0c937feac1103e4ee1c5a6e3.setIcon(icon_20bcd703a1d71c2186a6533494ae0105);
+            
+    
+            var marker_aee1aad7f499680b9996d9c183f660e5 = L.marker(
+                [-17.812872, 31.054479],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_43d1553960fe2d411f67bc0ec508a187 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_799a295907a48bacd340550a45a45233 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_94321c1951a541b134d2288d1c5e0dc5 = $(`<div id="html_94321c1951a541b134d2288d1c5e0dc5" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -107.82 dBm<br>SINR: 1.4900000000000002 dB<br>Tput: 4.8 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:15:20</div>`)[0];
+                popup_799a295907a48bacd340550a45a45233.setContent(html_94321c1951a541b134d2288d1c5e0dc5);
+            
+        
+
+        marker_aee1aad7f499680b9996d9c183f660e5.bindPopup(popup_799a295907a48bacd340550a45a45233)
+        ;
+
+        
+    
+    
+            marker_aee1aad7f499680b9996d9c183f660e5.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_aee1aad7f499680b9996d9c183f660e5.setIcon(icon_43d1553960fe2d411f67bc0ec508a187);
+            
+    
+            var marker_a67e0a3f4325debf6a80b0bfb19197bf = L.marker(
+                [-17.812966, 31.054953],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_634c8ebde2ae059f6c4aee9a178db095 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_105c9109dae9952191b3008b59a10d67 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_eceffb2de8f5897c5252c6789bd8734a = $(`<div id="html_eceffb2de8f5897c5252c6789bd8734a" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -123.28 dBm<br>SINR: -5.69 dB<br>Tput: 2.2 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:15:28</div>`)[0];
+                popup_105c9109dae9952191b3008b59a10d67.setContent(html_eceffb2de8f5897c5252c6789bd8734a);
+            
+        
+
+        marker_a67e0a3f4325debf6a80b0bfb19197bf.bindPopup(popup_105c9109dae9952191b3008b59a10d67)
+        ;
+
+        
+    
+    
+            marker_a67e0a3f4325debf6a80b0bfb19197bf.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a67e0a3f4325debf6a80b0bfb19197bf.setIcon(icon_634c8ebde2ae059f6c4aee9a178db095);
+            
+    
+            var marker_00114a6581e78a083f358e36d6ad359d = L.marker(
+                [-17.812754, 31.054825],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_31c5b02f22220264a4b750d6af72d364 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b93d5a419d01fdb7e1d008e2e48baf34 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9a05a5272232e1327a07ba1ad9162ed0 = $(`<div id="html_9a05a5272232e1327a07ba1ad9162ed0" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -116.67 dBm<br>SINR: -3.87 dB<br>Tput: 2.9 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:15:36</div>`)[0];
+                popup_b93d5a419d01fdb7e1d008e2e48baf34.setContent(html_9a05a5272232e1327a07ba1ad9162ed0);
+            
+        
+
+        marker_00114a6581e78a083f358e36d6ad359d.bindPopup(popup_b93d5a419d01fdb7e1d008e2e48baf34)
+        ;
+
+        
+    
+    
+            marker_00114a6581e78a083f358e36d6ad359d.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_00114a6581e78a083f358e36d6ad359d.setIcon(icon_31c5b02f22220264a4b750d6af72d364);
+            
+    
+            var marker_f3d33a7e5639c21b6a786aa2c436c09e = L.marker(
+                [-17.812283, 31.055215],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_547eb4a7ea1ec966a8733b4b3759f405 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d034defac73ca5fd9810487e1707bd0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9d11c5905b0d8277421bf2ae911837c9 = $(`<div id="html_9d11c5905b0d8277421bf2ae911837c9" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -97.95 dBm<br>SINR: 1.1799999999999995 dB<br>Tput: 4.8 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:15:44</div>`)[0];
+                popup_0d034defac73ca5fd9810487e1707bd0.setContent(html_9d11c5905b0d8277421bf2ae911837c9);
+            
+        
+
+        marker_f3d33a7e5639c21b6a786aa2c436c09e.bindPopup(popup_0d034defac73ca5fd9810487e1707bd0)
+        ;
+
+        
+    
+    
+            marker_f3d33a7e5639c21b6a786aa2c436c09e.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f3d33a7e5639c21b6a786aa2c436c09e.setIcon(icon_547eb4a7ea1ec966a8733b4b3759f405);
+            
+    
+            var marker_419453a370717032babf500f749aed6f = L.marker(
+                [-17.812196, 31.05536],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_388cf5dc902daadf89612e7d96eed3ba = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_047ce875b5a059fc60a0b54b10de3466 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3784bf40a7d0cde04fc1e4516945d6a1 = $(`<div id="html_3784bf40a7d0cde04fc1e4516945d6a1" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -105.74 dBm<br>SINR: 0.8599999999999994 dB<br>Tput: 4.5 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:15:52</div>`)[0];
+                popup_047ce875b5a059fc60a0b54b10de3466.setContent(html_3784bf40a7d0cde04fc1e4516945d6a1);
+            
+        
+
+        marker_419453a370717032babf500f749aed6f.bindPopup(popup_047ce875b5a059fc60a0b54b10de3466)
+        ;
+
+        
+    
+    
+            marker_419453a370717032babf500f749aed6f.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_419453a370717032babf500f749aed6f.setIcon(icon_388cf5dc902daadf89612e7d96eed3ba);
+            
+    
+            var marker_78c36a4ddee50c3a796f40725c984fe9 = L.marker(
+                [-17.81227, 31.055416],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_fb3b7ac47430d45067588fc3bf29ef1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4ead0e6cf3e9849998e95dbb38aae119 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_540370007ea35c4a4b62386a2184b72d = $(`<div id="html_540370007ea35c4a4b62386a2184b72d" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -113.85 dBm<br>SINR: -0.7799999999999994 dB<br>Tput: 3.7 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:16:00</div>`)[0];
+                popup_4ead0e6cf3e9849998e95dbb38aae119.setContent(html_540370007ea35c4a4b62386a2184b72d);
+            
+        
+
+        marker_78c36a4ddee50c3a796f40725c984fe9.bindPopup(popup_4ead0e6cf3e9849998e95dbb38aae119)
+        ;
+
+        
+    
+    
+            marker_78c36a4ddee50c3a796f40725c984fe9.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_78c36a4ddee50c3a796f40725c984fe9.setIcon(icon_fb3b7ac47430d45067588fc3bf29ef1b);
+            
+    
+            var marker_21113b1d969b2775d3bbecdd82446f7c = L.marker(
+                [-17.812021, 31.05589],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_a8c43e633e1b2648525137a6068b822e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0517080b68c534cbf61f530b96c3478 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8a050ea6c60bb000b70fc3c8c91f57a3 = $(`<div id="html_8a050ea6c60bb000b70fc3c8c91f57a3" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -100.18 dBm<br>SINR: 0.3100000000000005 dB<br>Tput: 4.3 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:16:08</div>`)[0];
+                popup_b0517080b68c534cbf61f530b96c3478.setContent(html_8a050ea6c60bb000b70fc3c8c91f57a3);
+            
+        
+
+        marker_21113b1d969b2775d3bbecdd82446f7c.bindPopup(popup_b0517080b68c534cbf61f530b96c3478)
+        ;
+
+        
+    
+    
+            marker_21113b1d969b2775d3bbecdd82446f7c.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21113b1d969b2775d3bbecdd82446f7c.setIcon(icon_a8c43e633e1b2648525137a6068b822e);
+            
+    
+            var marker_9c4f651a9efd46631deaf91ffc66d4bf = L.marker(
+                [-17.811676, 31.056041],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_862c999808939433d64fc41b884e8794 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8ab4f02ae4bfe2b2486c6df308199f1c = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1714975871531d5c03a0d722058354f9 = $(`<div id="html_1714975871531d5c03a0d722058354f9" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -113.96 dBm<br>SINR: -3.6 dB<br>Tput: 3.1 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:16:16</div>`)[0];
+                popup_8ab4f02ae4bfe2b2486c6df308199f1c.setContent(html_1714975871531d5c03a0d722058354f9);
+            
+        
+
+        marker_9c4f651a9efd46631deaf91ffc66d4bf.bindPopup(popup_8ab4f02ae4bfe2b2486c6df308199f1c)
+        ;
+
+        
+    
+    
+            marker_9c4f651a9efd46631deaf91ffc66d4bf.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9c4f651a9efd46631deaf91ffc66d4bf.setIcon(icon_862c999808939433d64fc41b884e8794);
+            
+    
+            var marker_adb4e49b9e146a893cf65eca7cb4f4ab = L.marker(
+                [-17.811902, 31.056568],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_9af98c003df3c6c0a46b37c2c1af5b42 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_36b52e70e6be7c9604bdd8d4c2346458 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_11c79fea12e9bff8f5c6674e19442a22 = $(`<div id="html_11c79fea12e9bff8f5c6674e19442a22" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -101.18 dBm<br>SINR: -1.1300000000000008 dB<br>Tput: 3.8 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:16:24</div>`)[0];
+                popup_36b52e70e6be7c9604bdd8d4c2346458.setContent(html_11c79fea12e9bff8f5c6674e19442a22);
+            
+        
+
+        marker_adb4e49b9e146a893cf65eca7cb4f4ab.bindPopup(popup_36b52e70e6be7c9604bdd8d4c2346458)
+        ;
+
+        
+    
+    
+            marker_adb4e49b9e146a893cf65eca7cb4f4ab.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_adb4e49b9e146a893cf65eca7cb4f4ab.setIcon(icon_9af98c003df3c6c0a46b37c2c1af5b42);
+            
+    
+            var marker_ca14bd7e8f9a15f320eb504b54eb6c99 = L.marker(
+                [-17.811744, 31.056009],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_7e1c86bb983404cdf3c6f5836ab372f0 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_abb53bc0f8b0713bf6e7d1b3fbc4af01 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c7536f7e07e8e22d89b5941f1834ad40 = $(`<div id="html_c7536f7e07e8e22d89b5941f1834ad40" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -104.69 dBm<br>SINR: -1.58 dB<br>Tput: 3.3 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:16:32</div>`)[0];
+                popup_abb53bc0f8b0713bf6e7d1b3fbc4af01.setContent(html_c7536f7e07e8e22d89b5941f1834ad40);
+            
+        
+
+        marker_ca14bd7e8f9a15f320eb504b54eb6c99.bindPopup(popup_abb53bc0f8b0713bf6e7d1b3fbc4af01)
+        ;
+
+        
+    
+    
+            marker_ca14bd7e8f9a15f320eb504b54eb6c99.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ca14bd7e8f9a15f320eb504b54eb6c99.setIcon(icon_7e1c86bb983404cdf3c6f5836ab372f0);
+            
+    
+            var marker_38c10b60600e0399d831fe207bacd2b6 = L.marker(
+                [-17.811504, 31.056353],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_791c7045e2807cb3d880253c55e1fc67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_722107c740d2c778d7e461757211e7f7 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7a7cbdb21fbeaba44325b6a3a795a445 = $(`<div id="html_7a7cbdb21fbeaba44325b6a3a795a445" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -124.22 dBm<br>SINR: -6.29 dB<br>Tput: 2.0 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:16:40</div>`)[0];
+                popup_722107c740d2c778d7e461757211e7f7.setContent(html_7a7cbdb21fbeaba44325b6a3a795a445);
+            
+        
+
+        marker_38c10b60600e0399d831fe207bacd2b6.bindPopup(popup_722107c740d2c778d7e461757211e7f7)
+        ;
+
+        
+    
+    
+            marker_38c10b60600e0399d831fe207bacd2b6.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_38c10b60600e0399d831fe207bacd2b6.setIcon(icon_791c7045e2807cb3d880253c55e1fc67);
+            
+    
+            var marker_737d7d318d5ecfbacfa6ef5caac36c50 = L.marker(
+                [-17.811466, 31.056761],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_f2f626c4a0ea060ee45ef95aec8b92a9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_6fd0cda06380a7af62bf450bb2034b98 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_29e039d7893cf5f1243e0124264d8891 = $(`<div id="html_29e039d7893cf5f1243e0124264d8891" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -112.09 dBm<br>SINR: -2.09 dB<br>Tput: 3.5 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:16:48</div>`)[0];
+                popup_6fd0cda06380a7af62bf450bb2034b98.setContent(html_29e039d7893cf5f1243e0124264d8891);
+            
+        
+
+        marker_737d7d318d5ecfbacfa6ef5caac36c50.bindPopup(popup_6fd0cda06380a7af62bf450bb2034b98)
+        ;
+
+        
+    
+    
+            marker_737d7d318d5ecfbacfa6ef5caac36c50.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_737d7d318d5ecfbacfa6ef5caac36c50.setIcon(icon_f2f626c4a0ea060ee45ef95aec8b92a9);
+            
+    
+            var marker_468d20230cda33e595e26b3d35931443 = L.marker(
+                [-17.811065, 31.056906],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_ec89e41831c35a3517141e47e72a279a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_99d109541b59b459d086285a7d3134c8 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c7bd990365327dfacabd208c6f7dd6e7 = $(`<div id="html_c7bd990365327dfacabd208c6f7dd6e7" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -122.65 dBm<br>SINR: -2.99 dB<br>Tput: 3.3 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:16:56</div>`)[0];
+                popup_99d109541b59b459d086285a7d3134c8.setContent(html_c7bd990365327dfacabd208c6f7dd6e7);
+            
+        
+
+        marker_468d20230cda33e595e26b3d35931443.bindPopup(popup_99d109541b59b459d086285a7d3134c8)
+        ;
+
+        
+    
+    
+            marker_468d20230cda33e595e26b3d35931443.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_468d20230cda33e595e26b3d35931443.setIcon(icon_ec89e41831c35a3517141e47e72a279a);
+            
+    
+            var marker_158f00b97565d874e62d5b5e6451a0ff = L.marker(
+                [-17.811209, 31.05681],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_c3cdbc45e55801bd79fe9dbba298f5b1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_45916856680abda634d4917a340740d5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6122593d96973a46f7a54547434b5536 = $(`<div id="html_6122593d96973a46f7a54547434b5536" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -111.24 dBm<br>SINR: -4.54 dB<br>Tput: 2.4 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:17:04</div>`)[0];
+                popup_45916856680abda634d4917a340740d5.setContent(html_6122593d96973a46f7a54547434b5536);
+            
+        
+
+        marker_158f00b97565d874e62d5b5e6451a0ff.bindPopup(popup_45916856680abda634d4917a340740d5)
+        ;
+
+        
+    
+    
+            marker_158f00b97565d874e62d5b5e6451a0ff.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_158f00b97565d874e62d5b5e6451a0ff.setIcon(icon_c3cdbc45e55801bd79fe9dbba298f5b1);
+            
+    
+            var marker_1be0fb60215938a35134fd00b9352056 = L.marker(
+                [-17.810875, 31.057272],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_448b427bf457389c919465e785054d53 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_57d52b32a6c5fd147bbd7f56b9507cef = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7dbc883dab8cbe747a33cfaad4f99975 = $(`<div id="html_7dbc883dab8cbe747a33cfaad4f99975" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -115.76 dBm<br>SINR: -0.8599999999999994 dB<br>Tput: 3.8 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:17:12</div>`)[0];
+                popup_57d52b32a6c5fd147bbd7f56b9507cef.setContent(html_7dbc883dab8cbe747a33cfaad4f99975);
+            
+        
+
+        marker_1be0fb60215938a35134fd00b9352056.bindPopup(popup_57d52b32a6c5fd147bbd7f56b9507cef)
+        ;
+
+        
+    
+    
+            marker_1be0fb60215938a35134fd00b9352056.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1be0fb60215938a35134fd00b9352056.setIcon(icon_448b427bf457389c919465e785054d53);
+            
+    
+            var marker_ae9fa10a2bed979f580004839788bb4c = L.marker(
+                [-17.810947, 31.057397],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_24e84c21b519586b6ca2aadb545c7cc2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b31b00189bc411f200a8803fc8972266 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_57dec47f12ee874bf501f9f8e8fabf2b = $(`<div id="html_57dec47f12ee874bf501f9f8e8fabf2b" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -117.52 dBm<br>SINR: -6.23 dB<br>Tput: 2.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:17:20</div>`)[0];
+                popup_b31b00189bc411f200a8803fc8972266.setContent(html_57dec47f12ee874bf501f9f8e8fabf2b);
+            
+        
+
+        marker_ae9fa10a2bed979f580004839788bb4c.bindPopup(popup_b31b00189bc411f200a8803fc8972266)
+        ;
+
+        
+    
+    
+            marker_ae9fa10a2bed979f580004839788bb4c.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ae9fa10a2bed979f580004839788bb4c.setIcon(icon_24e84c21b519586b6ca2aadb545c7cc2);
+            
+    
+            var marker_9135425c2b725e1fbc6d4fc3d9826959 = L.marker(
+                [-17.810654, 31.057515],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_3b8fdf874b744bf794c116c7b6a08bbe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e71657cddbe7f8a6acadbab4b9ac68c4 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_520cdc27c0287c1b3dbe808c4241d828 = $(`<div id="html_520cdc27c0287c1b3dbe808c4241d828" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -109.38 dBm<br>SINR: -0.1300000000000007 dB<br>Tput: 4.2 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:17:28</div>`)[0];
+                popup_e71657cddbe7f8a6acadbab4b9ac68c4.setContent(html_520cdc27c0287c1b3dbe808c4241d828);
+            
+        
+
+        marker_9135425c2b725e1fbc6d4fc3d9826959.bindPopup(popup_e71657cddbe7f8a6acadbab4b9ac68c4)
+        ;
+
+        
+    
+    
+            marker_9135425c2b725e1fbc6d4fc3d9826959.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9135425c2b725e1fbc6d4fc3d9826959.setIcon(icon_3b8fdf874b744bf794c116c7b6a08bbe);
+            
+    
+            var marker_41e063aee2862691c9723c8e000a894e = L.marker(
+                [-17.810527, 31.057916],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_37184aab71ee046b5e0a1b308dd48a4c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_683889c985a0a4042e5173783ddbb310 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ce75d37f9c12707c2ca90516e2ce3b08 = $(`<div id="html_ce75d37f9c12707c2ca90516e2ce3b08" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -113.69 dBm<br>SINR: -0.5899999999999999 dB<br>Tput: 4.1 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:17:36</div>`)[0];
+                popup_683889c985a0a4042e5173783ddbb310.setContent(html_ce75d37f9c12707c2ca90516e2ce3b08);
+            
+        
+
+        marker_41e063aee2862691c9723c8e000a894e.bindPopup(popup_683889c985a0a4042e5173783ddbb310)
+        ;
+
+        
+    
+    
+            marker_41e063aee2862691c9723c8e000a894e.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_41e063aee2862691c9723c8e000a894e.setIcon(icon_37184aab71ee046b5e0a1b308dd48a4c);
+            
+    
+            var marker_0660d4b89298236bb4685a53b86fc1ee = L.marker(
+                [-17.810586, 31.057729],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_9784383a9372431060b36e72fd1fe125 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9229e1a8274a616be8fd437f5fd22451 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f5aae6f771885a07cc395a160948154c = $(`<div id="html_f5aae6f771885a07cc395a160948154c" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -119.05 dBm<br>SINR: -5.32 dB<br>Tput: 2.8 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:17:44</div>`)[0];
+                popup_9229e1a8274a616be8fd437f5fd22451.setContent(html_f5aae6f771885a07cc395a160948154c);
+            
+        
+
+        marker_0660d4b89298236bb4685a53b86fc1ee.bindPopup(popup_9229e1a8274a616be8fd437f5fd22451)
+        ;
+
+        
+    
+    
+            marker_0660d4b89298236bb4685a53b86fc1ee.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0660d4b89298236bb4685a53b86fc1ee.setIcon(icon_9784383a9372431060b36e72fd1fe125);
+            
+    
+            var marker_423c796a93b08332043de104c7ab0bd0 = L.marker(
+                [-17.810398, 31.057767],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_040144c614b41b35ad369d7b2952998a = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bb48b533d9d58676e7ccca2ef8edcb9a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9362087600ce6fd54ad44150fb78b1dc = $(`<div id="html_9362087600ce6fd54ad44150fb78b1dc" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -122.12 dBm<br>SINR: -4.3 dB<br>Tput: 2.9 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:17:52</div>`)[0];
+                popup_bb48b533d9d58676e7ccca2ef8edcb9a.setContent(html_9362087600ce6fd54ad44150fb78b1dc);
+            
+        
+
+        marker_423c796a93b08332043de104c7ab0bd0.bindPopup(popup_bb48b533d9d58676e7ccca2ef8edcb9a)
+        ;
+
+        
+    
+    
+            marker_423c796a93b08332043de104c7ab0bd0.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_423c796a93b08332043de104c7ab0bd0.setIcon(icon_040144c614b41b35ad369d7b2952998a);
+            
+    
+            var marker_68ff2f9c5e03b87d7904a7953a7b414c = L.marker(
+                [-17.810289, 31.058247],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_3d7774f8cf62d7cbb8801a56c52817f5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c1672c24dd20997d1ed0305d4893a198 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_95c34f87b28bc03d8228740d50c7c1a3 = $(`<div id="html_95c34f87b28bc03d8228740d50c7c1a3" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -122.81 dBm<br>SINR: -1.6400000000000006 dB<br>Tput: 3.6 Mbps<br>Cell: HRE_AVENUES_1<br>Time: 2024-06-15 08:18:00</div>`)[0];
+                popup_c1672c24dd20997d1ed0305d4893a198.setContent(html_95c34f87b28bc03d8228740d50c7c1a3);
+            
+        
+
+        marker_68ff2f9c5e03b87d7904a7953a7b414c.bindPopup(popup_c1672c24dd20997d1ed0305d4893a198)
+        ;
+
+        
+    
+    
+            marker_68ff2f9c5e03b87d7904a7953a7b414c.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_68ff2f9c5e03b87d7904a7953a7b414c.setIcon(icon_3d7774f8cf62d7cbb8801a56c52817f5);
+            
+    
+            var marker_1151c953937103c4cfede112352a3ae2 = L.marker(
+                [-17.809994, 31.058565],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_068c3df9913b08c844ca4156fd0fcb00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9abfc8b10bb29966b8d26b38564d7681 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_377fdd7174e0b48bfa66ddc8ff35ef87 = $(`<div id="html_377fdd7174e0b48bfa66ddc8ff35ef87" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -118.16 dBm<br>SINR: -3.97 dB<br>Tput: 3.2 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:18:08</div>`)[0];
+                popup_9abfc8b10bb29966b8d26b38564d7681.setContent(html_377fdd7174e0b48bfa66ddc8ff35ef87);
+            
+        
+
+        marker_1151c953937103c4cfede112352a3ae2.bindPopup(popup_9abfc8b10bb29966b8d26b38564d7681)
+        ;
+
+        
+    
+    
+            marker_1151c953937103c4cfede112352a3ae2.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1151c953937103c4cfede112352a3ae2.setIcon(icon_068c3df9913b08c844ca4156fd0fcb00);
+            
+    
+            var marker_f4c46439be35950b5e07534faecd0549 = L.marker(
+                [-17.809652, 31.058613],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_6653a5bd7e73c6760c6c7af38f860e21 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5f96ca6a0243dbfc1fb236df371f66f6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_18fae9ab767f5fe3a58ab9d5d1b4503d = $(`<div id="html_18fae9ab767f5fe3a58ab9d5d1b4503d" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -134.91 dBm<br>SINR: -3.77 dB<br>Tput: 2.8 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:18:16</div>`)[0];
+                popup_5f96ca6a0243dbfc1fb236df371f66f6.setContent(html_18fae9ab767f5fe3a58ab9d5d1b4503d);
+            
+        
+
+        marker_f4c46439be35950b5e07534faecd0549.bindPopup(popup_5f96ca6a0243dbfc1fb236df371f66f6)
+        ;
+
+        
+    
+    
+            marker_f4c46439be35950b5e07534faecd0549.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f4c46439be35950b5e07534faecd0549.setIcon(icon_6653a5bd7e73c6760c6c7af38f860e21);
+            
+    
+            var marker_96b1750f173334cb96514ff392bdbc80 = L.marker(
+                [-17.80982, 31.059179],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_b2eb19bf80a378eb9de2375e8f493691 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b181b9596d61d1c013556d31afe99c07 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5066404107b2a8de6baa4496c07a34a9 = $(`<div id="html_5066404107b2a8de6baa4496c07a34a9" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -114.92 dBm<br>SINR: -1.8800000000000008 dB<br>Tput: 3.5 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:18:24</div>`)[0];
+                popup_b181b9596d61d1c013556d31afe99c07.setContent(html_5066404107b2a8de6baa4496c07a34a9);
+            
+        
+
+        marker_96b1750f173334cb96514ff392bdbc80.bindPopup(popup_b181b9596d61d1c013556d31afe99c07)
+        ;
+
+        
+    
+    
+            marker_96b1750f173334cb96514ff392bdbc80.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_96b1750f173334cb96514ff392bdbc80.setIcon(icon_b2eb19bf80a378eb9de2375e8f493691);
+            
+    
+            var marker_21fabe30a3439bf92b9ee41fcc1b0975 = L.marker(
+                [-17.80917, 31.059209],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_3637b316ef3d55257614f1b240142f16 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_173f4066e1e5bc5585e6a2bd4cbaf822 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9d5c3beb4f5d650aef4cdcc91370e182 = $(`<div id="html_9d5c3beb4f5d650aef4cdcc91370e182" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -122.86 dBm<br>SINR: -4.59 dB<br>Tput: 2.6 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:18:32</div>`)[0];
+                popup_173f4066e1e5bc5585e6a2bd4cbaf822.setContent(html_9d5c3beb4f5d650aef4cdcc91370e182);
+            
+        
+
+        marker_21fabe30a3439bf92b9ee41fcc1b0975.bindPopup(popup_173f4066e1e5bc5585e6a2bd4cbaf822)
+        ;
+
+        
+    
+    
+            marker_21fabe30a3439bf92b9ee41fcc1b0975.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_21fabe30a3439bf92b9ee41fcc1b0975.setIcon(icon_3637b316ef3d55257614f1b240142f16);
+            
+    
+            var marker_d7cd5c0c0c2a4b8855218dbbf93eb73e = L.marker(
+                [-17.809787, 31.058893],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_23a3e123ce2b7739b7a8ec7c78162819 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d4c13e23d2f5a9739b90ca75d20507db = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7a0ebb8a62a39aafe566c33dde77b17d = $(`<div id="html_7a0ebb8a62a39aafe566c33dde77b17d" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -126.72893170575706 dBm<br>SINR: -0.7100000000000009 dB<br>Tput: 3.5 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:18:40</div>`)[0];
+                popup_d4c13e23d2f5a9739b90ca75d20507db.setContent(html_7a0ebb8a62a39aafe566c33dde77b17d);
+            
+        
+
+        marker_d7cd5c0c0c2a4b8855218dbbf93eb73e.bindPopup(popup_d4c13e23d2f5a9739b90ca75d20507db)
+        ;
+
+        
+    
+    
+            marker_d7cd5c0c0c2a4b8855218dbbf93eb73e.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d7cd5c0c0c2a4b8855218dbbf93eb73e.setIcon(icon_23a3e123ce2b7739b7a8ec7c78162819);
+            
+    
+            var marker_2e06260f5aa29d851f37a24efa5d5bd3 = L.marker(
+                [-17.809289, 31.059525],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_8c839cd64649e1e843a9041a74966c00 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3c5d2d1272f7e11e7a870f9e62373fb0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c16feead35c703e34c5788ec46aa9665 = $(`<div id="html_c16feead35c703e34c5788ec46aa9665" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -127.39600642195936 dBm<br>SINR: -0.8200000000000003 dB<br>Tput: 4.3 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:18:48</div>`)[0];
+                popup_3c5d2d1272f7e11e7a870f9e62373fb0.setContent(html_c16feead35c703e34c5788ec46aa9665);
+            
+        
+
+        marker_2e06260f5aa29d851f37a24efa5d5bd3.bindPopup(popup_3c5d2d1272f7e11e7a870f9e62373fb0)
+        ;
+
+        
+    
+    
+            marker_2e06260f5aa29d851f37a24efa5d5bd3.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2e06260f5aa29d851f37a24efa5d5bd3.setIcon(icon_8c839cd64649e1e843a9041a74966c00);
+            
+    
+            var marker_29e1acc0e8ff8c156f6f281912a098bb = L.marker(
+                [-17.80906, 31.059523],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_89568e4832785297f1c6f4e4debfc5e1 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b6bf9bc3301b0bd1b26c9dd997e580ae = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e37c5492bc68e1a6e3b320e43ea61d48 = $(`<div id="html_e37c5492bc68e1a6e3b320e43ea61d48" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -113.08 dBm<br>SINR: -5.18 dB<br>Tput: 2.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:18:56</div>`)[0];
+                popup_b6bf9bc3301b0bd1b26c9dd997e580ae.setContent(html_e37c5492bc68e1a6e3b320e43ea61d48);
+            
+        
+
+        marker_29e1acc0e8ff8c156f6f281912a098bb.bindPopup(popup_b6bf9bc3301b0bd1b26c9dd997e580ae)
+        ;
+
+        
+    
+    
+            marker_29e1acc0e8ff8c156f6f281912a098bb.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_29e1acc0e8ff8c156f6f281912a098bb.setIcon(icon_89568e4832785297f1c6f4e4debfc5e1);
+            
+    
+            var marker_2cbaa94c59b16c152130729e7ee0d150 = L.marker(
+                [-17.808829, 31.059905],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_9d3152489692be00dc21cab5a44d030e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7046c64932114c1c295566b12fc230e1 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_c28608501a296a30218e492fa78e6d70 = $(`<div id="html_c28608501a296a30218e492fa78e6d70" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -114.92 dBm<br>SINR: 0.8499999999999996 dB<br>Tput: 4.6 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:19:04</div>`)[0];
+                popup_7046c64932114c1c295566b12fc230e1.setContent(html_c28608501a296a30218e492fa78e6d70);
+            
+        
+
+        marker_2cbaa94c59b16c152130729e7ee0d150.bindPopup(popup_7046c64932114c1c295566b12fc230e1)
+        ;
+
+        
+    
+    
+            marker_2cbaa94c59b16c152130729e7ee0d150.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_2cbaa94c59b16c152130729e7ee0d150.setIcon(icon_9d3152489692be00dc21cab5a44d030e);
+            
+    
+            var marker_1f0e0ad06a2af8566c6c745b800bbe20 = L.marker(
+                [-17.808971, 31.060034],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_b1695f317d38cb1d98e4690f842757d4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "darkred",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_4c9f65067f550ddb5faeab04a8603739 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e79368fb129b907d4d68288909048aab = $(`<div id="html_e79368fb129b907d4d68288909048aab" style="width: 100.0%; height: 100.0%;"><b>⚠️ Coverage Hole</b><br>RSRP: -115.6 dBm<br>SINR: -2.56 dB<br>Tput: 3.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:19:12</div>`)[0];
+                popup_4c9f65067f550ddb5faeab04a8603739.setContent(html_e79368fb129b907d4d68288909048aab);
+            
+        
+
+        marker_1f0e0ad06a2af8566c6c745b800bbe20.bindPopup(popup_4c9f65067f550ddb5faeab04a8603739)
+        ;
+
+        
+    
+    
+            marker_1f0e0ad06a2af8566c6c745b800bbe20.bindTooltip(
+                `<div>
+                     Coverage Hole
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1f0e0ad06a2af8566c6c745b800bbe20.setIcon(icon_b1695f317d38cb1d98e4690f842757d4);
+            
+    
+            var marker_a63a372592855e1e1c2564e612f41bd9 = L.marker(
+                [-17.808913, 31.060247],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_83f2f0c60a1da0c24eed71b540be91ad = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_8c516aa400ae61d17906ba861247e3ed = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_0152d7a27a54cb0179e3b505ba598185 = $(`<div id="html_0152d7a27a54cb0179e3b505ba598185" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -127.39235713015236 dBm<br>SINR: 9.26 dB<br>Tput: 38.6 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:19:20</div>`)[0];
+                popup_8c516aa400ae61d17906ba861247e3ed.setContent(html_0152d7a27a54cb0179e3b505ba598185);
+            
+        
+
+        marker_a63a372592855e1e1c2564e612f41bd9.bindPopup(popup_8c516aa400ae61d17906ba861247e3ed)
+        ;
+
+        
+    
+    
+            marker_a63a372592855e1e1c2564e612f41bd9.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_a63a372592855e1e1c2564e612f41bd9.setIcon(icon_83f2f0c60a1da0c24eed71b540be91ad);
+            
+    
+            var marker_298905181949ac28a1932195124c775f = L.marker(
+                [-17.808805, 31.059839],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_174082bae5d6b496863bf21d37b0393c = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_625443bda1c0fa6d6cac3584543cec80 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_3678c9ef31b01fb852307668fac3ed3d = $(`<div id="html_3678c9ef31b01fb852307668fac3ed3d" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -103.56 dBm<br>SINR: 6.14 dB<br>Tput: 26.7 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:19:36</div>`)[0];
+                popup_625443bda1c0fa6d6cac3584543cec80.setContent(html_3678c9ef31b01fb852307668fac3ed3d);
+            
+        
+
+        marker_298905181949ac28a1932195124c775f.bindPopup(popup_625443bda1c0fa6d6cac3584543cec80)
+        ;
+
+        
+    
+    
+            marker_298905181949ac28a1932195124c775f.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_298905181949ac28a1932195124c775f.setIcon(icon_174082bae5d6b496863bf21d37b0393c);
+            
+    
+            var marker_eb52899d303ac435ddf07920bb89e6e1 = L.marker(
+                [-17.806372, 31.062833],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_4f0a5ae3abe955280c8569461badfd18 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_c0c93a289b33ab4b738892ec861624d0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9741ba719dc31d2fa4570ee6bd3488df = $(`<div id="html_9741ba719dc31d2fa4570ee6bd3488df" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -78.57 dBm<br>SINR: 11.92 dB<br>Tput: 49.6 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:21:28</div>`)[0];
+                popup_c0c93a289b33ab4b738892ec861624d0.setContent(html_9741ba719dc31d2fa4570ee6bd3488df);
+            
+        
+
+        marker_eb52899d303ac435ddf07920bb89e6e1.bindPopup(popup_c0c93a289b33ab4b738892ec861624d0)
+        ;
+
+        
+    
+    
+            marker_eb52899d303ac435ddf07920bb89e6e1.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eb52899d303ac435ddf07920bb89e6e1.setIcon(icon_4f0a5ae3abe955280c8569461badfd18);
+            
+    
+            var marker_9cef6338cf957aa0e5deb6580122b7b6 = L.marker(
+                [-17.802956, 31.066646],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_dc2b27193acaef93670f0a14958dba76 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_b0eb8267980aeb17f3006cbf32b594bf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_6cb9a3167d71414c5b474eeab9a0c2e6 = $(`<div id="html_6cb9a3167d71414c5b474eeab9a0c2e6" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -87.31 dBm<br>SINR: 10.03 dB<br>Tput: 42.0 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:24:16</div>`)[0];
+                popup_b0eb8267980aeb17f3006cbf32b594bf.setContent(html_6cb9a3167d71414c5b474eeab9a0c2e6);
+            
+        
+
+        marker_9cef6338cf957aa0e5deb6580122b7b6.bindPopup(popup_b0eb8267980aeb17f3006cbf32b594bf)
+        ;
+
+        
+    
+    
+            marker_9cef6338cf957aa0e5deb6580122b7b6.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_9cef6338cf957aa0e5deb6580122b7b6.setIcon(icon_dc2b27193acaef93670f0a14958dba76);
+            
+    
+            var marker_1e6e836a08b35806b4c6450d31b46696 = L.marker(
+                [-17.799935, 31.070213],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_c951e604f29d43a590a4ea53e7f78b1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c067c0bba20a6771866acd913ecea74 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_130a0c3f745efd5afc517a7f69b41a2e = $(`<div id="html_130a0c3f745efd5afc517a7f69b41a2e" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -98.0 dBm<br>SINR: 5.91 dB<br>Tput: 24.9 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:26:40</div>`)[0];
+                popup_7c067c0bba20a6771866acd913ecea74.setContent(html_130a0c3f745efd5afc517a7f69b41a2e);
+            
+        
+
+        marker_1e6e836a08b35806b4c6450d31b46696.bindPopup(popup_7c067c0bba20a6771866acd913ecea74)
+        ;
+
+        
+    
+    
+            marker_1e6e836a08b35806b4c6450d31b46696.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1e6e836a08b35806b4c6450d31b46696.setIcon(icon_c951e604f29d43a590a4ea53e7f78b1b);
+            
+    
+            var marker_4081f54ad5faaf1f12f3d5207285981e = L.marker(
+                [-17.805665, 31.062853],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_06ea77aadfa644dfeb69a9c3f72bc3c2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_463628373d7a3e3536fa8914173fb460 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_175469b6d2b304665055f6f7c64345d9 = $(`<div id="html_175469b6d2b304665055f6f7c64345d9" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -78.4 dBm<br>SINR: 14.0 dB<br>Tput: 58.2 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:30:32</div>`)[0];
+                popup_463628373d7a3e3536fa8914173fb460.setContent(html_175469b6d2b304665055f6f7c64345d9);
+            
+        
+
+        marker_4081f54ad5faaf1f12f3d5207285981e.bindPopup(popup_463628373d7a3e3536fa8914173fb460)
+        ;
+
+        
+    
+    
+            marker_4081f54ad5faaf1f12f3d5207285981e.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4081f54ad5faaf1f12f3d5207285981e.setIcon(icon_06ea77aadfa644dfeb69a9c3f72bc3c2);
+            
+    
+            var marker_5a9f4fac6bb2a6845bb308a41c98cc70 = L.marker(
+                [-17.805966, 31.062592],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_d80eb081ed48812424b554343fc14c1b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1f6c4755dd8e754187bc5b78d0e5891d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_5bbd5214e1e7b1801b5fe43b6a433621 = $(`<div id="html_5bbd5214e1e7b1801b5fe43b6a433621" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -124.21704310812711 dBm<br>SINR: 10.05 dB<br>Tput: 39.9 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:30:40</div>`)[0];
+                popup_1f6c4755dd8e754187bc5b78d0e5891d.setContent(html_5bbd5214e1e7b1801b5fe43b6a433621);
+            
+        
+
+        marker_5a9f4fac6bb2a6845bb308a41c98cc70.bindPopup(popup_1f6c4755dd8e754187bc5b78d0e5891d)
+        ;
+
+        
+    
+    
+            marker_5a9f4fac6bb2a6845bb308a41c98cc70.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5a9f4fac6bb2a6845bb308a41c98cc70.setIcon(icon_d80eb081ed48812424b554343fc14c1b);
+            
+    
+            var marker_0a1df0056277ff71b9d2696dffe20702 = L.marker(
+                [-17.809635, 31.059133],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_95ea77e1a68286a86da0221ce625efa2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_95faef77650b601586e5d463889f214a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cc5e5631c1b73fbcd8b96266f9bd1c36 = $(`<div id="html_cc5e5631c1b73fbcd8b96266f9bd1c36" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -74.06 dBm<br>SINR: -0.33 dB<br>Tput: 18.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:32:56</div>`)[0];
+                popup_95faef77650b601586e5d463889f214a.setContent(html_cc5e5631c1b73fbcd8b96266f9bd1c36);
+            
+        
+
+        marker_0a1df0056277ff71b9d2696dffe20702.bindPopup(popup_95faef77650b601586e5d463889f214a)
+        ;
+
+        
+    
+    
+            marker_0a1df0056277ff71b9d2696dffe20702.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_0a1df0056277ff71b9d2696dffe20702.setIcon(icon_95ea77e1a68286a86da0221ce625efa2);
+            
+    
+            var marker_dff70c3249969a6ad9610d6ce3466193 = L.marker(
+                [-17.809411, 31.05869],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_0ddf2198c496d757ffd15e0cedb62a67 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f13a462b15f6d1d8b4064d57d6fafd6a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_de7a3b8c2f824f31c0d42ba41654c389 = $(`<div id="html_de7a3b8c2f824f31c0d42ba41654c389" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -79.48 dBm<br>SINR: -5.949999999999999 dB<br>Tput: 10.9 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:33:04</div>`)[0];
+                popup_f13a462b15f6d1d8b4064d57d6fafd6a.setContent(html_de7a3b8c2f824f31c0d42ba41654c389);
+            
+        
+
+        marker_dff70c3249969a6ad9610d6ce3466193.bindPopup(popup_f13a462b15f6d1d8b4064d57d6fafd6a)
+        ;
+
+        
+    
+    
+            marker_dff70c3249969a6ad9610d6ce3466193.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dff70c3249969a6ad9610d6ce3466193.setIcon(icon_0ddf2198c496d757ffd15e0cedb62a67);
+            
+    
+            var marker_33c8cd9b10062f3a8b3148412bdbbb58 = L.marker(
+                [-17.809738, 31.058048],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_d3629c5870eb9c5c2a6c8024b1124872 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_70ab9f79cad721ed6a35d390aaff9d7f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9c82c63f9d61fbbb58b8eb30f189f5b7 = $(`<div id="html_9c82c63f9d61fbbb58b8eb30f189f5b7" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -81.42 dBm<br>SINR: -5.550000000000001 dB<br>Tput: 11.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:33:12</div>`)[0];
+                popup_70ab9f79cad721ed6a35d390aaff9d7f.setContent(html_9c82c63f9d61fbbb58b8eb30f189f5b7);
+            
+        
+
+        marker_33c8cd9b10062f3a8b3148412bdbbb58.bindPopup(popup_70ab9f79cad721ed6a35d390aaff9d7f)
+        ;
+
+        
+    
+    
+            marker_33c8cd9b10062f3a8b3148412bdbbb58.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_33c8cd9b10062f3a8b3148412bdbbb58.setIcon(icon_d3629c5870eb9c5c2a6c8024b1124872);
+            
+    
+            var marker_198043191e1e6f8c8facb3b2c9cf81f4 = L.marker(
+                [-17.810133, 31.058272],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_a871cbd5ceb3abcbd34b60eabe6bae94 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_04b420040e1670af9299638a7fff7fc5 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_aeba804c3b79c3f363c108d36a7f22d2 = $(`<div id="html_aeba804c3b79c3f363c108d36a7f22d2" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -94.3 dBm<br>SINR: -6.82 dB<br>Tput: 10.2 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:33:20</div>`)[0];
+                popup_04b420040e1670af9299638a7fff7fc5.setContent(html_aeba804c3b79c3f363c108d36a7f22d2);
+            
+        
+
+        marker_198043191e1e6f8c8facb3b2c9cf81f4.bindPopup(popup_04b420040e1670af9299638a7fff7fc5)
+        ;
+
+        
+    
+    
+            marker_198043191e1e6f8c8facb3b2c9cf81f4.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_198043191e1e6f8c8facb3b2c9cf81f4.setIcon(icon_a871cbd5ceb3abcbd34b60eabe6bae94);
+            
+    
+            var marker_cc1a0242b280074fd5fe3b0fb8054291 = L.marker(
+                [-17.81047, 31.058055],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_4a01934d07aa899f08069f6489a7ee11 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_232883702f33a958b78bbc83b7e27a30 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_108b3ee7627af12bbc8f27fbf3d50077 = $(`<div id="html_108b3ee7627af12bbc8f27fbf3d50077" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -92.15 dBm<br>SINR: -8.49 dB<br>Tput: 9.3 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:33:28</div>`)[0];
+                popup_232883702f33a958b78bbc83b7e27a30.setContent(html_108b3ee7627af12bbc8f27fbf3d50077);
+            
+        
+
+        marker_cc1a0242b280074fd5fe3b0fb8054291.bindPopup(popup_232883702f33a958b78bbc83b7e27a30)
+        ;
+
+        
+    
+    
+            marker_cc1a0242b280074fd5fe3b0fb8054291.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cc1a0242b280074fd5fe3b0fb8054291.setIcon(icon_4a01934d07aa899f08069f6489a7ee11);
+            
+    
+            var marker_6f1d120166110357e43b2dcc2705b2f7 = L.marker(
+                [-17.810377, 31.057828],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_3d3294fb9b72817dbc3f87ac8d295b89 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_32a4676986bd345b0d417bf518d5e069 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e76aa1c2b9269255937c55445a97e15d = $(`<div id="html_e76aa1c2b9269255937c55445a97e15d" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -91.64 dBm<br>SINR: -7.78 dB<br>Tput: 9.6 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:33:36</div>`)[0];
+                popup_32a4676986bd345b0d417bf518d5e069.setContent(html_e76aa1c2b9269255937c55445a97e15d);
+            
+        
+
+        marker_6f1d120166110357e43b2dcc2705b2f7.bindPopup(popup_32a4676986bd345b0d417bf518d5e069)
+        ;
+
+        
+    
+    
+            marker_6f1d120166110357e43b2dcc2705b2f7.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_6f1d120166110357e43b2dcc2705b2f7.setIcon(icon_3d3294fb9b72817dbc3f87ac8d295b89);
+            
+    
+            var marker_97d106daa67b52011c17c32e949ff0ce = L.marker(
+                [-17.811285, 31.057594],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_b46c2d33160702523eb992e086f72ec6 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_fc6970954a9a90741b68b8b66c71db8d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_fd2f823b497177b794039b018072a793 = $(`<div id="html_fd2f823b497177b794039b018072a793" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -87.1 dBm<br>SINR: -6.82 dB<br>Tput: 10.9 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:33:44</div>`)[0];
+                popup_fc6970954a9a90741b68b8b66c71db8d.setContent(html_fd2f823b497177b794039b018072a793);
+            
+        
+
+        marker_97d106daa67b52011c17c32e949ff0ce.bindPopup(popup_fc6970954a9a90741b68b8b66c71db8d)
+        ;
+
+        
+    
+    
+            marker_97d106daa67b52011c17c32e949ff0ce.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_97d106daa67b52011c17c32e949ff0ce.setIcon(icon_b46c2d33160702523eb992e086f72ec6);
+            
+    
+            var marker_c11dbb8c08b044468d6710a8da4cf2a4 = L.marker(
+                [-17.811628, 31.057168],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_0bfafd2bb2788bd1d97b6f46229f669e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_11b2beb1c4cb19de3d6fcb27835804f9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_188a3f3f11967f49ade5d4e54f80c038 = $(`<div id="html_188a3f3f11967f49ade5d4e54f80c038" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -79.87 dBm<br>SINR: -3.69 dB<br>Tput: 14.0 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:33:52</div>`)[0];
+                popup_11b2beb1c4cb19de3d6fcb27835804f9.setContent(html_188a3f3f11967f49ade5d4e54f80c038);
+            
+        
+
+        marker_c11dbb8c08b044468d6710a8da4cf2a4.bindPopup(popup_11b2beb1c4cb19de3d6fcb27835804f9)
+        ;
+
+        
+    
+    
+            marker_c11dbb8c08b044468d6710a8da4cf2a4.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c11dbb8c08b044468d6710a8da4cf2a4.setIcon(icon_0bfafd2bb2788bd1d97b6f46229f669e);
+            
+    
+            var marker_4fb3b39813889a163c1321e124a753f8 = L.marker(
+                [-17.812288, 31.056901],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_4cb4ec532246ca44db1f91c147dbcacd = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3545ac0f8c95c76ebf47b2af50a97e13 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e70e039a3dcb216c8268613b8fa7e87a = $(`<div id="html_e70e039a3dcb216c8268613b8fa7e87a" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -92.28 dBm<br>SINR: -6.140000000000001 dB<br>Tput: 12.2 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:34:00</div>`)[0];
+                popup_3545ac0f8c95c76ebf47b2af50a97e13.setContent(html_e70e039a3dcb216c8268613b8fa7e87a);
+            
+        
+
+        marker_4fb3b39813889a163c1321e124a753f8.bindPopup(popup_3545ac0f8c95c76ebf47b2af50a97e13)
+        ;
+
+        
+    
+    
+            marker_4fb3b39813889a163c1321e124a753f8.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_4fb3b39813889a163c1321e124a753f8.setIcon(icon_4cb4ec532246ca44db1f91c147dbcacd);
+            
+    
+            var marker_d825a2fac08f97f077f450dfb6ffad2b = L.marker(
+                [-17.812357, 31.056699],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_e7be40d9c69016f54a8e48a854b01e17 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1778020b4d3ff89b0550bb81d96bb0c9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f777380242ad05778fd88b087b8c45a1 = $(`<div id="html_f777380242ad05778fd88b087b8c45a1" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -93.58 dBm<br>SINR: -8.42 dB<br>Tput: 7.9 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:34:08</div>`)[0];
+                popup_1778020b4d3ff89b0550bb81d96bb0c9.setContent(html_f777380242ad05778fd88b087b8c45a1);
+            
+        
+
+        marker_d825a2fac08f97f077f450dfb6ffad2b.bindPopup(popup_1778020b4d3ff89b0550bb81d96bb0c9)
+        ;
+
+        
+    
+    
+            marker_d825a2fac08f97f077f450dfb6ffad2b.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d825a2fac08f97f077f450dfb6ffad2b.setIcon(icon_e7be40d9c69016f54a8e48a854b01e17);
+            
+    
+            var marker_7554354f9004cc7ac25427f98143c0ab = L.marker(
+                [-17.812968, 31.056383],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_e1c68055b8a556cdf179a316d3d1d57e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f93b4db7a259081bcc722cc3f7b122f0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d4cf34f272bc3b2bf0480fb6d9c00e3c = $(`<div id="html_d4cf34f272bc3b2bf0480fb6d9c00e3c" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -90.15 dBm<br>SINR: -5.66 dB<br>Tput: 11.2 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:34:16</div>`)[0];
+                popup_f93b4db7a259081bcc722cc3f7b122f0.setContent(html_d4cf34f272bc3b2bf0480fb6d9c00e3c);
+            
+        
+
+        marker_7554354f9004cc7ac25427f98143c0ab.bindPopup(popup_f93b4db7a259081bcc722cc3f7b122f0)
+        ;
+
+        
+    
+    
+            marker_7554354f9004cc7ac25427f98143c0ab.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7554354f9004cc7ac25427f98143c0ab.setIcon(icon_e1c68055b8a556cdf179a316d3d1d57e);
+            
+    
+            var marker_7bb24129482a56cbf14ee5e29a47af9a = L.marker(
+                [-17.813056, 31.056679],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_5d9c6b35fce72dadf633eff6e5b8bb09 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_edf78e158b693bea90ffbc2dd66c24d0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d918bb0354d97068d3433ccd838b3eb5 = $(`<div id="html_d918bb0354d97068d3433ccd838b3eb5" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -90.94 dBm<br>SINR: -9.53 dB<br>Tput: 7.7 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:34:24</div>`)[0];
+                popup_edf78e158b693bea90ffbc2dd66c24d0.setContent(html_d918bb0354d97068d3433ccd838b3eb5);
+            
+        
+
+        marker_7bb24129482a56cbf14ee5e29a47af9a.bindPopup(popup_edf78e158b693bea90ffbc2dd66c24d0)
+        ;
+
+        
+    
+    
+            marker_7bb24129482a56cbf14ee5e29a47af9a.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_7bb24129482a56cbf14ee5e29a47af9a.setIcon(icon_5d9c6b35fce72dadf633eff6e5b8bb09);
+            
+    
+            var marker_85f891543c8c98f9360bb89ca537bbaa = L.marker(
+                [-17.813805, 31.056458],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_ec88640de09a89dc1a889030e9a82ac8 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_05f78f85164710a0f81c7dce569fedd9 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_b01c3c9d4dc65256674feb4543d51a6f = $(`<div id="html_b01c3c9d4dc65256674feb4543d51a6f" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -89.93 dBm<br>SINR: -4.800000000000001 dB<br>Tput: 13.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:34:32</div>`)[0];
+                popup_05f78f85164710a0f81c7dce569fedd9.setContent(html_b01c3c9d4dc65256674feb4543d51a6f);
+            
+        
+
+        marker_85f891543c8c98f9360bb89ca537bbaa.bindPopup(popup_05f78f85164710a0f81c7dce569fedd9)
+        ;
+
+        
+    
+    
+            marker_85f891543c8c98f9360bb89ca537bbaa.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_85f891543c8c98f9360bb89ca537bbaa.setIcon(icon_ec88640de09a89dc1a889030e9a82ac8);
+            
+    
+            var marker_bdec2bc55cc850bea12cb7798ae84b01 = L.marker(
+                [-17.813943, 31.056464],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_c159bafa95097f669cc7faf3a7e8e52d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9df1c7f777c536b302a37f61f95585b0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_33817ce0c3fb1ad32bc83b575a5b5add = $(`<div id="html_33817ce0c3fb1ad32bc83b575a5b5add" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -94.47 dBm<br>SINR: -7.36 dB<br>Tput: 10.4 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:34:40</div>`)[0];
+                popup_9df1c7f777c536b302a37f61f95585b0.setContent(html_33817ce0c3fb1ad32bc83b575a5b5add);
+            
+        
+
+        marker_bdec2bc55cc850bea12cb7798ae84b01.bindPopup(popup_9df1c7f777c536b302a37f61f95585b0)
+        ;
+
+        
+    
+    
+            marker_bdec2bc55cc850bea12cb7798ae84b01.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_bdec2bc55cc850bea12cb7798ae84b01.setIcon(icon_c159bafa95097f669cc7faf3a7e8e52d);
+            
+    
+            var marker_10a2bb4f9a06a6fe192b9e68cd45cf57 = L.marker(
+                [-17.814477, 31.055659],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_542c15fb515e7c1d86cfd308baca8b6f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_50320a93ac525d1a095d1322731baad2 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f26999f2a1e7fa7c115a98bf6a1192c9 = $(`<div id="html_f26999f2a1e7fa7c115a98bf6a1192c9" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -101.26 dBm<br>SINR: -10.0 dB<br>Tput: 7.3 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:34:48</div>`)[0];
+                popup_50320a93ac525d1a095d1322731baad2.setContent(html_f26999f2a1e7fa7c115a98bf6a1192c9);
+            
+        
+
+        marker_10a2bb4f9a06a6fe192b9e68cd45cf57.bindPopup(popup_50320a93ac525d1a095d1322731baad2)
+        ;
+
+        
+    
+    
+            marker_10a2bb4f9a06a6fe192b9e68cd45cf57.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_10a2bb4f9a06a6fe192b9e68cd45cf57.setIcon(icon_542c15fb515e7c1d86cfd308baca8b6f);
+            
+    
+            var marker_dcd1c72ec1b88788be6abc0375ea4797 = L.marker(
+                [-17.81475, 31.055782],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_f2922b3b294848947f347212a2b12b52 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e2718370c026df5b5d2ce59792739750 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_9478dfc3e91062fb67be0a1dcbd89646 = $(`<div id="html_9478dfc3e91062fb67be0a1dcbd89646" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -84.28 dBm<br>SINR: -8.43 dB<br>Tput: 9.2 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:34:56</div>`)[0];
+                popup_e2718370c026df5b5d2ce59792739750.setContent(html_9478dfc3e91062fb67be0a1dcbd89646);
+            
+        
+
+        marker_dcd1c72ec1b88788be6abc0375ea4797.bindPopup(popup_e2718370c026df5b5d2ce59792739750)
+        ;
+
+        
+    
+    
+            marker_dcd1c72ec1b88788be6abc0375ea4797.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_dcd1c72ec1b88788be6abc0375ea4797.setIcon(icon_f2922b3b294848947f347212a2b12b52);
+            
+    
+            var marker_cabd0c3dcbd7315d1f430d88eb48a70f = L.marker(
+                [-17.815258, 31.05512],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_c22ff78cb5b743366f3b1cbc1b4c58ab = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_bd6da5fd45412b59137c23aebbef1f3f = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_8231fb7cd68b3ff05178de51d697272c = $(`<div id="html_8231fb7cd68b3ff05178de51d697272c" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -93.45 dBm<br>SINR: -8.16 dB<br>Tput: 9.0 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:35:04</div>`)[0];
+                popup_bd6da5fd45412b59137c23aebbef1f3f.setContent(html_8231fb7cd68b3ff05178de51d697272c);
+            
+        
+
+        marker_cabd0c3dcbd7315d1f430d88eb48a70f.bindPopup(popup_bd6da5fd45412b59137c23aebbef1f3f)
+        ;
+
+        
+    
+    
+            marker_cabd0c3dcbd7315d1f430d88eb48a70f.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_cabd0c3dcbd7315d1f430d88eb48a70f.setIcon(icon_c22ff78cb5b743366f3b1cbc1b4c58ab);
+            
+    
+            var marker_ae64187ad0dcc67c9a57688926398ac2 = L.marker(
+                [-17.815489, 31.055031],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_ac00505d8ece6f1475dccd82baaa2546 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_875f60a6c386b2877d7fe68eea7ee7cf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_114cfff249e2963e8ad597444ad18eb9 = $(`<div id="html_114cfff249e2963e8ad597444ad18eb9" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -96.39 dBm<br>SINR: -3.52 dB<br>Tput: 14.0 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:35:12</div>`)[0];
+                popup_875f60a6c386b2877d7fe68eea7ee7cf.setContent(html_114cfff249e2963e8ad597444ad18eb9);
+            
+        
+
+        marker_ae64187ad0dcc67c9a57688926398ac2.bindPopup(popup_875f60a6c386b2877d7fe68eea7ee7cf)
+        ;
+
+        
+    
+    
+            marker_ae64187ad0dcc67c9a57688926398ac2.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ae64187ad0dcc67c9a57688926398ac2.setIcon(icon_ac00505d8ece6f1475dccd82baaa2546);
+            
+    
+            var marker_e079d6689e299047185426a1c9b8642e = L.marker(
+                [-17.815836, 31.054969],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_18031d187a46090c46f87ca09ae2adfe = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_daa32d5fbc6acb7646edd39a4b318b87 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a8fc1c2edcd372321a69150604ac4cee = $(`<div id="html_a8fc1c2edcd372321a69150604ac4cee" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -90.13 dBm<br>SINR: -5.4 dB<br>Tput: 11.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:35:20</div>`)[0];
+                popup_daa32d5fbc6acb7646edd39a4b318b87.setContent(html_a8fc1c2edcd372321a69150604ac4cee);
+            
+        
+
+        marker_e079d6689e299047185426a1c9b8642e.bindPopup(popup_daa32d5fbc6acb7646edd39a4b318b87)
+        ;
+
+        
+    
+    
+            marker_e079d6689e299047185426a1c9b8642e.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e079d6689e299047185426a1c9b8642e.setIcon(icon_18031d187a46090c46f87ca09ae2adfe);
+            
+    
+            var marker_eee36078a79c8253f16dbeb30a4f4420 = L.marker(
+                [-17.816341, 31.054801],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_caef541b0138ab2974122fa4675610f4 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_5852eb0a02eb48f6d3eda1aeb02f046b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_59125cb18c466bbcbdb7aebbca1d7dd3 = $(`<div id="html_59125cb18c466bbcbdb7aebbca1d7dd3" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -98.19 dBm<br>SINR: -10.0 dB<br>Tput: 6.6 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:35:28</div>`)[0];
+                popup_5852eb0a02eb48f6d3eda1aeb02f046b.setContent(html_59125cb18c466bbcbdb7aebbca1d7dd3);
+            
+        
+
+        marker_eee36078a79c8253f16dbeb30a4f4420.bindPopup(popup_5852eb0a02eb48f6d3eda1aeb02f046b)
+        ;
+
+        
+    
+    
+            marker_eee36078a79c8253f16dbeb30a4f4420.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_eee36078a79c8253f16dbeb30a4f4420.setIcon(icon_caef541b0138ab2974122fa4675610f4);
+            
+    
+            var marker_58e2ffd3125221637c647cf581b0a1f1 = L.marker(
+                [-17.816771, 31.054911],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_16957ef69e5d13dbcbb15be8f9ba803d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1a224236b674624aa7a7c922ea602784 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e0923e7836e3d950385f184b5ee8086e = $(`<div id="html_e0923e7836e3d950385f184b5ee8086e" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -99.35 dBm<br>SINR: -8.04 dB<br>Tput: 8.5 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:35:36</div>`)[0];
+                popup_1a224236b674624aa7a7c922ea602784.setContent(html_e0923e7836e3d950385f184b5ee8086e);
+            
+        
+
+        marker_58e2ffd3125221637c647cf581b0a1f1.bindPopup(popup_1a224236b674624aa7a7c922ea602784)
+        ;
+
+        
+    
+    
+            marker_58e2ffd3125221637c647cf581b0a1f1.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_58e2ffd3125221637c647cf581b0a1f1.setIcon(icon_16957ef69e5d13dbcbb15be8f9ba803d);
+            
+    
+            var marker_e966511c8600475096d30d371da8467b = L.marker(
+                [-17.817531, 31.054441],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_13c49a9e499aacdd4238d049127d6e42 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_74ce23c00f6d9c9bf4e0757126a01b22 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_1ba7e35778855c88d610feae6ed816c9 = $(`<div id="html_1ba7e35778855c88d610feae6ed816c9" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -102.93 dBm<br>SINR: -8.629999999999999 dB<br>Tput: 8.2 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:35:44</div>`)[0];
+                popup_74ce23c00f6d9c9bf4e0757126a01b22.setContent(html_1ba7e35778855c88d610feae6ed816c9);
+            
+        
+
+        marker_e966511c8600475096d30d371da8467b.bindPopup(popup_74ce23c00f6d9c9bf4e0757126a01b22)
+        ;
+
+        
+    
+    
+            marker_e966511c8600475096d30d371da8467b.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_e966511c8600475096d30d371da8467b.setIcon(icon_13c49a9e499aacdd4238d049127d6e42);
+            
+    
+            var marker_34c83fa8b917b7ac768b9f083fc3eb7f = L.marker(
+                [-17.817284, 31.054239],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_91588389dff555606cd06bf882bbdf6b = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_0d1db580bf483fa01736bee9f60912be = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f275aaaa2f09cabf3387073063bf5cbe = $(`<div id="html_f275aaaa2f09cabf3387073063bf5cbe" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -100.03 dBm<br>SINR: -9.08 dB<br>Tput: 8.5 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:35:52</div>`)[0];
+                popup_0d1db580bf483fa01736bee9f60912be.setContent(html_f275aaaa2f09cabf3387073063bf5cbe);
+            
+        
+
+        marker_34c83fa8b917b7ac768b9f083fc3eb7f.bindPopup(popup_0d1db580bf483fa01736bee9f60912be)
+        ;
+
+        
+    
+    
+            marker_34c83fa8b917b7ac768b9f083fc3eb7f.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_34c83fa8b917b7ac768b9f083fc3eb7f.setIcon(icon_91588389dff555606cd06bf882bbdf6b);
+            
+    
+            var marker_d472be391fcdabe87d6ba683c8acf9c0 = L.marker(
+                [-17.817794, 31.05388],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_b10c41650b46b0db58d1807666295a1e = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_f5a6d79c0a90659fcefcc3cd8b7f4457 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4d99f23dd26908a3405f6372a1a6d99a = $(`<div id="html_4d99f23dd26908a3405f6372a1a6d99a" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -94.3 dBm<br>SINR: -9.95 dB<br>Tput: 6.4 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:36:00</div>`)[0];
+                popup_f5a6d79c0a90659fcefcc3cd8b7f4457.setContent(html_4d99f23dd26908a3405f6372a1a6d99a);
+            
+        
+
+        marker_d472be391fcdabe87d6ba683c8acf9c0.bindPopup(popup_f5a6d79c0a90659fcefcc3cd8b7f4457)
+        ;
+
+        
+    
+    
+            marker_d472be391fcdabe87d6ba683c8acf9c0.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d472be391fcdabe87d6ba683c8acf9c0.setIcon(icon_b10c41650b46b0db58d1807666295a1e);
+            
+    
+            var marker_ed769445e64960e8d9ead512c0027fa7 = L.marker(
+                [-17.818101, 31.053804],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_7891d7c0524458a0e32d84b146126a94 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ce9e1d18d0e3143bab76ff603a09183d = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_f429c036a3e89ca1ce6b15bf727cd86a = $(`<div id="html_f429c036a3e89ca1ce6b15bf727cd86a" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -96.74 dBm<br>SINR: -8.21 dB<br>Tput: 9.9 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:36:08</div>`)[0];
+                popup_ce9e1d18d0e3143bab76ff603a09183d.setContent(html_f429c036a3e89ca1ce6b15bf727cd86a);
+            
+        
+
+        marker_ed769445e64960e8d9ead512c0027fa7.bindPopup(popup_ce9e1d18d0e3143bab76ff603a09183d)
+        ;
+
+        
+    
+    
+            marker_ed769445e64960e8d9ead512c0027fa7.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ed769445e64960e8d9ead512c0027fa7.setIcon(icon_7891d7c0524458a0e32d84b146126a94);
+            
+    
+            var marker_8cde712dd915a4bff40e52801c0a7b7e = L.marker(
+                [-17.818692, 31.053531],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_4d2428eb3a7b9fdb4bc6e1e831ccbf30 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_9bdccbc3934e40647378c5deb6e9361a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_cbcfeb275230fdb5acb4a326d4dfee37 = $(`<div id="html_cbcfeb275230fdb5acb4a326d4dfee37" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -95.12 dBm<br>SINR: -10.0 dB<br>Tput: 7.7 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:36:16</div>`)[0];
+                popup_9bdccbc3934e40647378c5deb6e9361a.setContent(html_cbcfeb275230fdb5acb4a326d4dfee37);
+            
+        
+
+        marker_8cde712dd915a4bff40e52801c0a7b7e.bindPopup(popup_9bdccbc3934e40647378c5deb6e9361a)
+        ;
+
+        
+    
+    
+            marker_8cde712dd915a4bff40e52801c0a7b7e.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8cde712dd915a4bff40e52801c0a7b7e.setIcon(icon_4d2428eb3a7b9fdb4bc6e1e831ccbf30);
+            
+    
+            var marker_5251bf53625e9c5995d830f7c07aad83 = L.marker(
+                [-17.818866, 31.053584],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_28bf5a68b2bcdb3e24d438be89de8a28 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_7c9ab2d890414692d7a5fa88e42b1fec = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_69aaa2e28ff2ff8dc88bbfc58bc2bc97 = $(`<div id="html_69aaa2e28ff2ff8dc88bbfc58bc2bc97" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -101.87 dBm<br>SINR: -9.17 dB<br>Tput: 9.3 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:36:24</div>`)[0];
+                popup_7c9ab2d890414692d7a5fa88e42b1fec.setContent(html_69aaa2e28ff2ff8dc88bbfc58bc2bc97);
+            
+        
+
+        marker_5251bf53625e9c5995d830f7c07aad83.bindPopup(popup_7c9ab2d890414692d7a5fa88e42b1fec)
+        ;
+
+        
+    
+    
+            marker_5251bf53625e9c5995d830f7c07aad83.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5251bf53625e9c5995d830f7c07aad83.setIcon(icon_28bf5a68b2bcdb3e24d438be89de8a28);
+            
+    
+            var marker_b38f1a3d1d341c1ebd53c07572f592d6 = L.marker(
+                [-17.819415, 31.053107],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_3775e20cb0d87799587bbc4c14a4cde5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_3601ea50cf399ede58ab4d0abc8bc57e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_ddebf04a4038a5af670a272bad7960b6 = $(`<div id="html_ddebf04a4038a5af670a272bad7960b6" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -98.77 dBm<br>SINR: -7.49 dB<br>Tput: 8.5 Mbps<br>Cell: HRE_AVENUES_1<br>Time: 2024-06-15 08:36:32</div>`)[0];
+                popup_3601ea50cf399ede58ab4d0abc8bc57e.setContent(html_ddebf04a4038a5af670a272bad7960b6);
+            
+        
+
+        marker_b38f1a3d1d341c1ebd53c07572f592d6.bindPopup(popup_3601ea50cf399ede58ab4d0abc8bc57e)
+        ;
+
+        
+    
+    
+            marker_b38f1a3d1d341c1ebd53c07572f592d6.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_b38f1a3d1d341c1ebd53c07572f592d6.setIcon(icon_3775e20cb0d87799587bbc4c14a4cde5);
+            
+    
+            var marker_8079bb5b865a87f05a7a977bfd18bc9c = L.marker(
+                [-17.820517, 31.052856],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_117548657cd0f81f5e94ce1f0f097fa9 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1ce0fb310bfce25c26608fddfc182e7a = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_86ac3b24827a895f08822e74b59a98fe = $(`<div id="html_86ac3b24827a895f08822e74b59a98fe" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -96.68 dBm<br>SINR: -6.19 dB<br>Tput: 10.6 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:36:40</div>`)[0];
+                popup_1ce0fb310bfce25c26608fddfc182e7a.setContent(html_86ac3b24827a895f08822e74b59a98fe);
+            
+        
+
+        marker_8079bb5b865a87f05a7a977bfd18bc9c.bindPopup(popup_1ce0fb310bfce25c26608fddfc182e7a)
+        ;
+
+        
+    
+    
+            marker_8079bb5b865a87f05a7a977bfd18bc9c.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_8079bb5b865a87f05a7a977bfd18bc9c.setIcon(icon_117548657cd0f81f5e94ce1f0f097fa9);
+            
+    
+            var marker_fb64cc5ad9710b2dd88c5317e178bdfa = L.marker(
+                [-17.820529, 31.052783],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_409e94da71dcb2414efdfdd17bb75d0d = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_e53128dfacb5155f7cacc8f414c72caf = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_d61f20bca301e138ca28b280b63df869 = $(`<div id="html_d61f20bca301e138ca28b280b63df869" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -107.33 dBm<br>SINR: -10.0 dB<br>Tput: 7.2 Mbps<br>Cell: HRE_GREEN_1<br>Time: 2024-06-15 08:36:48</div>`)[0];
+                popup_e53128dfacb5155f7cacc8f414c72caf.setContent(html_d61f20bca301e138ca28b280b63df869);
+            
+        
+
+        marker_fb64cc5ad9710b2dd88c5317e178bdfa.bindPopup(popup_e53128dfacb5155f7cacc8f414c72caf)
+        ;
+
+        
+    
+    
+            marker_fb64cc5ad9710b2dd88c5317e178bdfa.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fb64cc5ad9710b2dd88c5317e178bdfa.setIcon(icon_409e94da71dcb2414efdfdd17bb75d0d);
+            
+    
+            var marker_c7075be6dda8e99ad1bf05d7ad586480 = L.marker(
+                [-17.820892, 31.052145],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_0604083e3dcb999f3dc2e1fcf1d6d2ee = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a84a1aaa8f6141715cad8b7d3a5042e0 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_e59188c5a342ff32fd1ba9a2d9b36173 = $(`<div id="html_e59188c5a342ff32fd1ba9a2d9b36173" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -82.43 dBm<br>SINR: -8.05 dB<br>Tput: 9.1 Mbps<br>Cell: HRE_BORROW_1<br>Time: 2024-06-15 08:36:56</div>`)[0];
+                popup_a84a1aaa8f6141715cad8b7d3a5042e0.setContent(html_e59188c5a342ff32fd1ba9a2d9b36173);
+            
+        
+
+        marker_c7075be6dda8e99ad1bf05d7ad586480.bindPopup(popup_a84a1aaa8f6141715cad8b7d3a5042e0)
+        ;
+
+        
+    
+    
+            marker_c7075be6dda8e99ad1bf05d7ad586480.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_c7075be6dda8e99ad1bf05d7ad586480.setIcon(icon_0604083e3dcb999f3dc2e1fcf1d6d2ee);
+            
+    
+            var marker_d0562f96798afe73a61ea8cc63a048c2 = L.marker(
+                [-17.821337, 31.052287],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_519d32743b54a26418bdd74f4a86c998 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_a413287c4f07ad6e131fd7d3a31025ec = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a5cbe634801957f9c751d6524b559f12 = $(`<div id="html_a5cbe634801957f9c751d6524b559f12" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -98.68 dBm<br>SINR: -10.0 dB<br>Tput: 4.4 Mbps<br>Cell: HRE_AVENUES_1<br>Time: 2024-06-15 08:37:04</div>`)[0];
+                popup_a413287c4f07ad6e131fd7d3a31025ec.setContent(html_a5cbe634801957f9c751d6524b559f12);
+            
+        
+
+        marker_d0562f96798afe73a61ea8cc63a048c2.bindPopup(popup_a413287c4f07ad6e131fd7d3a31025ec)
+        ;
+
+        
+    
+    
+            marker_d0562f96798afe73a61ea8cc63a048c2.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_d0562f96798afe73a61ea8cc63a048c2.setIcon(icon_519d32743b54a26418bdd74f4a86c998);
+            
+    
+            var marker_ac4a535ab691753f3bf6010bc8e321e7 = L.marker(
+                [-17.821614, 31.052257],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_ba45881b0e7a3402832b174207223c0f = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "purple",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_d6fdba9314c7ce1bca2bab909dc62a2b = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_4aecb60f94e2657a7d8992578efd1912 = $(`<div id="html_4aecb60f94e2657a7d8992578efd1912" style="width: 100.0%; height: 100.0%;"><b>⚠️ Interference</b><br>RSRP: -100.65 dBm<br>SINR: -10.0 dB<br>Tput: 7.4 Mbps<br>Cell: HRE_AVENUES_1<br>Time: 2024-06-15 08:37:12</div>`)[0];
+                popup_d6fdba9314c7ce1bca2bab909dc62a2b.setContent(html_4aecb60f94e2657a7d8992578efd1912);
+            
+        
+
+        marker_ac4a535ab691753f3bf6010bc8e321e7.bindPopup(popup_d6fdba9314c7ce1bca2bab909dc62a2b)
+        ;
+
+        
+    
+    
+            marker_ac4a535ab691753f3bf6010bc8e321e7.bindTooltip(
+                `<div>
+                     Interference
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_ac4a535ab691753f3bf6010bc8e321e7.setIcon(icon_ba45881b0e7a3402832b174207223c0f);
+            
+    
+            var marker_f560b266faab5392d0a5df03cf075f0f = L.marker(
+                [-17.836823, 31.038702],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_2cddb02bb6f02e41f44f9f278a75cff5 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_1363cc8a4cc489c04833bbe0126bdbe6 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_963589e0c7c6146cf5f8d8f075d838b5 = $(`<div id="html_963589e0c7c6146cf5f8d8f075d838b5" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -125.834387877937 dBm<br>SINR: 8.55 dB<br>Tput: 39.6 Mbps<br>Cell: HRE_SOUTH_1<br>Time: 2024-06-15 08:44:48</div>`)[0];
+                popup_1363cc8a4cc489c04833bbe0126bdbe6.setContent(html_963589e0c7c6146cf5f8d8f075d838b5);
+            
+        
+
+        marker_f560b266faab5392d0a5df03cf075f0f.bindPopup(popup_1363cc8a4cc489c04833bbe0126bdbe6)
+        ;
+
+        
+    
+    
+            marker_f560b266faab5392d0a5df03cf075f0f.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_f560b266faab5392d0a5df03cf075f0f.setIcon(icon_2cddb02bb6f02e41f44f9f278a75cff5);
+            
+    
+            var marker_1855bf00099fdece5e4cce7a85c28590 = L.marker(
+                [-17.837491, 31.027551],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_ffb6fd3789546ea5d54202411c3be973 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_75b01b322b6799ae87b75fbd5862bf8e = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_871d84eba0fbe8c5ef8317856e4a11a6 = $(`<div id="html_871d84eba0fbe8c5ef8317856e4a11a6" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -84.58 dBm<br>SINR: 9.31 dB<br>Tput: 40.1 Mbps<br>Cell: HRE_SOUTH_1<br>Time: 2024-06-15 08:50:00</div>`)[0];
+                popup_75b01b322b6799ae87b75fbd5862bf8e.setContent(html_871d84eba0fbe8c5ef8317856e4a11a6);
+            
+        
+
+        marker_1855bf00099fdece5e4cce7a85c28590.bindPopup(popup_75b01b322b6799ae87b75fbd5862bf8e)
+        ;
+
+        
+    
+    
+            marker_1855bf00099fdece5e4cce7a85c28590.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_1855bf00099fdece5e4cce7a85c28590.setIcon(icon_ffb6fd3789546ea5d54202411c3be973);
+            
+    
+            var marker_79c0482f70cb1c4874c17d4552272d8b = L.marker(
+                [-17.836885, 31.02507],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_76ff72064ba5a56383c9f5394971efb2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "orange",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_104dd5c7bd5fdb07fe24975d6b293631 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_a98f8761962585394a5fd6b887f2cca3 = $(`<div id="html_a98f8761962585394a5fd6b887f2cca3" style="width: 100.0%; height: 100.0%;"><b>⚠️ HO Failure</b><br>RSRP: -90.94 dBm<br>SINR: 7.26 dB<br>Tput: 38.0 Mbps<br>Cell: HRE_SOUTH_1<br>Time: 2024-06-15 08:51:12</div>`)[0];
+                popup_104dd5c7bd5fdb07fe24975d6b293631.setContent(html_a98f8761962585394a5fd6b887f2cca3);
+            
+        
+
+        marker_79c0482f70cb1c4874c17d4552272d8b.bindPopup(popup_104dd5c7bd5fdb07fe24975d6b293631)
+        ;
+
+        
+    
+    
+            marker_79c0482f70cb1c4874c17d4552272d8b.bindTooltip(
+                `<div>
+                     HO Failure
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_79c0482f70cb1c4874c17d4552272d8b.setIcon(icon_76ff72064ba5a56383c9f5394971efb2);
+            
+    
+            var marker_5a12e2cd7df6a19e2742502c03702871 = L.marker(
+                [-17.836367, 31.023845],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_83e4a9a7e5ba686f53e5fa265fefb1a2 = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_78754e5fd10542867d8402041c9d7e70 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_19b5999ede0e4dc566a0159bd28ae12f = $(`<div id="html_19b5999ede0e4dc566a0159bd28ae12f" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -122.18443991328176 dBm<br>SINR: 6.08 dB<br>Tput: 28.3 Mbps<br>Cell: HRE_SOUTH_1<br>Time: 2024-06-15 08:51:44</div>`)[0];
+                popup_78754e5fd10542867d8402041c9d7e70.setContent(html_19b5999ede0e4dc566a0159bd28ae12f);
+            
+        
+
+        marker_5a12e2cd7df6a19e2742502c03702871.bindPopup(popup_78754e5fd10542867d8402041c9d7e70)
+        ;
+
+        
+    
+    
+            marker_5a12e2cd7df6a19e2742502c03702871.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_5a12e2cd7df6a19e2742502c03702871.setIcon(icon_83e4a9a7e5ba686f53e5fa265fefb1a2);
+            
+    
+            var marker_fa09551c4c40277291972f1cddc380a0 = L.marker(
+                [-17.827524, 31.03026],
+                {
+}
+            ).addTo(marker_cluster_2639f6b6415512f4dad8e8d14e07d38c);
+        
+    
+            var icon_d9448a33ba1c410c44d840bf6b1c8fec = L.AwesomeMarkers.icon(
+                {
+  "markerColor": "red",
+  "iconColor": "white",
+  "icon": "exclamation-triangle",
+  "prefix": "fa",
+  "extraClasses": "fa-rotate-0",
+}
+            );
+        
+    
+        var popup_ecf6984b6f7ae06b92ef682ee9f3c832 = L.popup({
+  "maxWidth": 200,
+});
+
+        
+            
+                var html_7563ad322b2c152a7b446146b64dbc62 = $(`<div id="html_7563ad322b2c152a7b446146b64dbc62" style="width: 100.0%; height: 100.0%;"><b>⚠️ Call Drop</b><br>RSRP: -127.23207687891312 dBm<br>SINR: 4.11 dB<br>Tput: 20.8 Mbps<br>Cell: HRE_CBD_1<br>Time: 2024-06-15 08:58:16</div>`)[0];
+                popup_ecf6984b6f7ae06b92ef682ee9f3c832.setContent(html_7563ad322b2c152a7b446146b64dbc62);
+            
+        
+
+        marker_fa09551c4c40277291972f1cddc380a0.bindPopup(popup_ecf6984b6f7ae06b92ef682ee9f3c832)
+        ;
+
+        
+    
+    
+            marker_fa09551c4c40277291972f1cddc380a0.bindTooltip(
+                `<div>
+                     Call Drop
+                 </div>`,
+                {
+  "sticky": true,
+}
+            );
+        
+    
+                marker_fa09551c4c40277291972f1cddc380a0.setIcon(icon_d9448a33ba1c410c44d840bf6b1c8fec);
+            
+    
+            marker_cluster_2639f6b6415512f4dad8e8d14e07d38c.addTo(map_4f29dd603406981a7cca44e32b63f586);
+        
+    
+            var tile_layer_8a5b669c6101ea284f847f79391ad139 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detect_retina": false, "max_native_zoom": 19, "max_zoom": 19, "min_zoom": 0, "no_wrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+            var mini_map_ff6580b87147cf74d52ef8151b19b36f = new L.Control.MiniMap(
+                tile_layer_8a5b669c6101ea284f847f79391ad139,
+                {
+  "position": "bottomright",
+  "width": 150,
+  "height": 150,
+  "collapsedWidth": 25,
+  "collapsedHeight": 25,
+  "zoomLevelOffset": -5,
+  "centerFixed": false,
+  "zoomAnimation": false,
+  "toggleDisplay": true,
+  "autoToggleDisplay": false,
+  "minimized": false,
+}
+            );
+            map_4f29dd603406981a7cca44e32b63f586.addControl(mini_map_ff6580b87147cf74d52ef8151b19b36f);
+        
+    
+            var layer_control_95731d390fc13d67526d4aa1f466e75a_layers = {
+                base_layers : {
+                    "cartodbpositron" : tile_layer_e379e9d87a3de9c73131d2de8ed2f3d7,
+                },
+                overlays :  {
+                    "Fault Events" : marker_cluster_2639f6b6415512f4dad8e8d14e07d38c,
+                },
+            };
+            let layer_control_95731d390fc13d67526d4aa1f466e75a = L.control.layers(
+                layer_control_95731d390fc13d67526d4aa1f466e75a_layers.base_layers,
+                layer_control_95731d390fc13d67526d4aa1f466e75a_layers.overlays,
+                {
+  "position": "topright",
+  "collapsed": true,
+  "autoZIndex": true,
+}
+            ).addTo(map_4f29dd603406981a7cca44e32b63f586);
+
+        
+</script>
+</html>
