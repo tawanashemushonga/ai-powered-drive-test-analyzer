@@ -1,4 +1,4 @@
-# 📡 AI-Powered Drive Test Analyser
+#  AI-Powered Drive Test Analyser
 
 > A complete telecoms drive test analysis pipeline with ML anomaly detection,
 > interactive coverage maps, and AI-generated optimisation reports.
@@ -11,7 +11,7 @@
 
 ---
 
-## 🎯 What This Does
+## What This Does
 
 | Stage | What Happens |
 |-------|-------------|
@@ -39,7 +39,7 @@ drive_test_ai/
 
 ---
 
-## 🚀 Quick Start
+##  Quick Start
 
 ### 1. Install dependencies
 ```bash
@@ -68,7 +68,7 @@ python map_visualiser.py
 
 ---
 
-## 🤖 AI Components
+##  AI Components
 
 ### Isolation Forest (Anomaly Detection)
 - **Unsupervised** — no labelled data needed
@@ -92,7 +92,7 @@ equally professional output based on KPI thresholds.
 
 ---
 
-## 📊 KPI Thresholds Used
+## KPI Thresholds Used
 
 | KPI | Excellent | Good | Fair | Poor | Bad |
 |-----|-----------|------|------|------|-----|
@@ -153,7 +153,7 @@ The dashboard includes:
 
 ---
 
-## 💼 CV / Portfolio Notes
+## 💼 Portfolio Notes
 
 This project demonstrates:
 - **Drive Testing** — KPI parsing, threshold classification, coverage analysis
@@ -162,6 +162,10 @@ This project demonstrates:
 - **Machine Learning** — unsupervised anomaly detection, clustering
 - **Cloud-Ready** — easily deployable on Oracle Cloud (free) or Streamlit Cloud (free)
 - **AI Integration** — LLM for natural language report generation
+
+## NB
+
+The data generated in the drive test in fictitious. Does not belong to an ISP operator stated.
 
 ---
 
